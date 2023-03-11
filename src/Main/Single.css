@@ -1,0 +1,108 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.row_poster{
+    width: 100%;
+    object-fit: contain;
+    height: 150px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: transform 350ms;
+    cursor: pointer;
+}
+.row_poster:hover{
+    transform: scale(1.5);
+    position: relative;;
+    z-index: 9999;
+}
+.row_posters{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 50px 20px;
+}
+.row_posters::-webkit-scrollbar{
+    display: none;
+}
+.row{
+    color: white;
+    padding: 0px 20px;
+    backdrop-filter: blur(20px);
+    background-color: #000000ab;
+}
+.TitleDiv{
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+}
+.MoreButton{
+    color: white;
+    font-weight: bolder;
+    margin: 10px 30px 0px 0px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+.MoreText{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.MoreArrow{
+    font-size: 15px
+}
+.ScrollLeft{
+    position: absolute;
+    height: 150px;
+    left: 0;
+    margin-right:10px;
+    padding: 0px 30px 0px 20px;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+}
+.ScrollRight{
+    position: absolute;
+    height: 150px;
+    right: 0;
+    padding: 0px 20px 0px 30px;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%);
+}
+@media screen and (min-width:0px) and (max-width:800px) {
+    .row_poster{
+        height: 100px;
+    }
+    .MoreText{
+        font-size: 15px;
+        margin-right: 10px;
+    }
+    .ScrollLeft{
+        display: none;
+    }
+    .ScrollRight{
+        display: none;
+    }
+    .row_poster:hover{
+        transform: scale(1.1);
+    }
+    .row{
+        padding: 0px;
+    }
+    .row_posters{
+        padding: 25px 0px;
+    }
+    .MoreButton{
+        margin: 0px 10px 0px 0px;
+        font-size: 12px;
+    }
+    .TitleDiv{
+        font-size: 15px;
+        margin-left: 5px;
+    }
+    .MoreArrow{
+        font-size: 10px;
+    }
+}
