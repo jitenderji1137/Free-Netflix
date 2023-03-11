@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <title>React App</title>
+    <style>
+         body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
   </head>
+  <!-- oncontextmenu="return false" -->
   <body style="background-color: #0f0617">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
