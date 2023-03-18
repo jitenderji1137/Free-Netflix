@@ -44,7 +44,7 @@ export default function Single({Geans,Title}){
             :
             data.map((Item)=>{
                 return(
-                    <Image src={Item.Image} className="row_poster" key={Item.id}/>
+                    <Image src={Item.Image} title={Item.Title} className="row_poster" key={Item.id}/>
                 )
             })
             }

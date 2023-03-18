@@ -4,7 +4,7 @@ import { MdHome , MdMovie } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 import { RiSpyFill } from "react-icons/ri";
 import {IoIosVideocam } from "react-icons/io";
-import { BsFillPersonFill } from "react-icons/bs";
+import { BsFillPersonFill,BsCCircle } from "react-icons/bs";
 import { AiOutlineLinkedin,AiOutlineInstagram,AiOutlineGithub,AiFillTwitterSquare } from "react-icons/ai";
 export default function Footer(){
     return(
@@ -50,7 +50,7 @@ export default function Footer(){
           </div>
           <div className="line_separete">
             <div className="by flex">
-                <p>Cpoyright @ {new Date().getFullYear()} All Rights are Reserved by Trademetrader</p>
+                <p style={{display:"flex"}}>Cpoyright <BsCCircle style={{margin:"5px 10px"}}/> {new Date().getFullYear()} All Rights are Reserved by <Link to="https://www.instagram.com/vijayji1137/" style={{marginLeft:"10px"}}> Trademetrader</Link></p>
                 <div className="icons">
                     <a href="https://www.instagram.com/vijayji1137/" className="icon1 icon--instagram">
                         <i><AiOutlineInstagram/></i>
