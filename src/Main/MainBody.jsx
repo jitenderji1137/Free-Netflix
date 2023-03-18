@@ -5,7 +5,7 @@ export default function MainBody({Cate}){
     return(
         <>
         <div className="banner">
-           <img src="https://i.imgur.com/7bdh8bG.jpg" className="bg" alt=""/>
+           <img src="https://i.postimg.cc/SKtc44h8/Untitled-1.jpg" className="bg" alt=""/>
            <div className="content">
               <Heading color="white" fontSize="50px">Mulan</Heading>
               <h4>

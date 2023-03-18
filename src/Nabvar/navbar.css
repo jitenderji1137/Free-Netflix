@@ -112,6 +112,10 @@ padding-left: 0;
     display: flex;
     justify-content: space-between;
 }
+.Mycarts{
+    margin-top: -150px;
+    box-shadow: 1px -26px 39px 15px rgba(0,0,0,0.75);
+}
 @media screen and (min-width:0px) and (max-width:1100px) {
     header{
         padding: 5px 20px;
@@ -143,12 +147,15 @@ padding-left: 0;
         min-height: 0vh;
     }
 }
-@media screen and (min-width:0px) and (max-width:400px) {
+@media screen and (min-width:0px) and (max-width:500px) {
     .content{
         display: none;
     }
     .banner .bg{
         height: auto;
         object-fit: contain;
+    }
+    .Mycarts{
+        padding-bottom: 50px;
     }
 }
