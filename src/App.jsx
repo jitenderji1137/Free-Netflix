@@ -2,6 +2,8 @@ import Navbar from "./Nabvar/navbar";
 import { Route , Routes } from "react-router-dom";
 import MainBody from "./Main/MainBody";
 import Search from "./Main/Search";
+import NoPage from "./NoPageFound/NoPageFound";
+import Footer from "./Footer/Footer";
 function App() {
   const HomePage = [
     {Geans:"?_page=1&_limit=20",Title:"Recent Uploaded ..."},
@@ -57,7 +59,9 @@ function App() {
       <Route path="movies" element={<MainBody Cate={Movies}/>}></Route>
       <Route path="webseries" element={<MainBody Cate={WebSeries}/>}></Route>
       <Route path="adult" element={<MainBody Cate={Adult}/>}></Route>
+      <Route path="*" element={<NoPage/>}></Route>
     </Routes>
+    <Footer/>
     </>
   );
 }

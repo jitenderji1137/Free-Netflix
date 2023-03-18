@@ -10,7 +10,7 @@ export default function Navbar(){
     return(
         <>
         <header>
-            <Heading color="red">Free Netflix</Heading>
+            <Heading color="red"><Link to="/">Free Netflix</Link></Heading>
             <ul className="navigaition">
              <li><Link to="/movies">Movies</Link></li>
              <li><Link to="/webseries">Web Series</Link></li>
