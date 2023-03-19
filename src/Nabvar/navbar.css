@@ -144,7 +144,10 @@ padding-left: 0;
     }
     .banner{
         padding: 100px 20px;
-        min-height: 0vh;
+        min-height: 55vh;
+    }
+    .Mycarts{
+        margin-top: -60px;
     }
 }
 @media screen and (min-width:0px) and (max-width:500px) {
@@ -157,5 +160,6 @@ padding-left: 0;
     }
     .Mycarts{
         padding-bottom: 50px;
+        margin-top: -200px;
     }
 }

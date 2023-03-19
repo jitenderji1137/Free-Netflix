@@ -54,11 +54,11 @@ function App() {
     <>
     <Navbar/>
     <Routes>
-      <Route path="/" element={<MainBody Cate={HomePage}/>}></Route>
+      <Route path="/" element={<MainBody Cate={HomePage} value={0}/>}></Route>
       <Route path="/search/:value" element={<Search></Search>}></Route>
-      <Route path="movies" element={<MainBody Cate={Movies}/>}></Route>
-      <Route path="webseries" element={<MainBody Cate={WebSeries}/>}></Route>
-      <Route path="adult" element={<MainBody Cate={Adult}/>}></Route>
+      <Route path="movies" element={<MainBody Cate={Movies} value={1}/>}></Route>
+      <Route path="webseries" element={<MainBody Cate={WebSeries} value={2}/>}></Route>
+      <Route path="adult" element={<MainBody Cate={Adult} value={3}/>}></Route>
       <Route path="*" element={<NoPage/>}></Route>
     </Routes>
     <Footer/>

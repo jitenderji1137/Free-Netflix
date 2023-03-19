@@ -12,7 +12,7 @@ export default function Footer(){
         <footer className="hero">
           <div className="container flex">
             <div className="container__about">
-            <h2>About</h2>
+            <h2>About Me</h2>
             <p>
             A young software developer, starting his professional life, This is a sample website of my work and I will create more like this website , on this website you will get all movies if there is no movie which you want you can message me it will be abilable with in 24 hours.
             </p>
@@ -50,7 +50,7 @@ export default function Footer(){
           </div>
           <div className="line_separete">
             <div className="by flex">
-                <p style={{display:"flex"}}>Cpoyright <BsCCircle style={{margin:"5px 10px"}}/> {new Date().getFullYear()} All Rights are Reserved by <Link to="https://www.instagram.com/vijayji1137/" style={{marginLeft:"10px"}}> Trademetrader</Link></p>
+                <p style={{display:"flex"}}>Cpoyright <BsCCircle style={{margin:"5px 10px"}}/> {new Date().getFullYear()} All Rights are Reserved by <Link to="https://www.instagram.com/vijayji1137/" style={{marginLeft:"10px"}}>VIJAYJI1137</Link></p>
                 <div className="icons">
                     <a href="https://www.instagram.com/vijayji1137/" className="icon1 icon--instagram">
                         <i><AiOutlineInstagram/></i>

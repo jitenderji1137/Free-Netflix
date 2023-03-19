@@ -1,20 +1,39 @@
 import { Heading , Button } from "@chakra-ui/react"
 import "../Nabvar/navbar.css"
+import { useEffect , useState } from "react"
 import Single from "./Single"
-export default function MainBody({Cate}){
+import axios from "axios"
+export default function MainBody({Cate,value}){
+  const [arda,arrdata] = useState([]);
+  useEffect(() => {
+    arrdata([]);
+    axios.get("https://jitenderji1137.github.io/zee5apidata/free-netflix-banners.json")
+    .then((res)=>{
+      arrdata(res.data[value]);
+    })
+  }, [value]);
+  if(value===1){
+    document.title = 'Free Netflix - All Movies - Created BY TRADEmeTRADER as Jitender or Vijay';
+  }if(value===2){
+    document.title = 'Free Netflix - All Web Series - Created BY TRADEmeTRADER as Jitender or Vijay';
+  }if(value===3){
+    document.title = 'Free Netflix - All Adult - Created BY TRADEmeTRADER as Jitender or Vijay';
+  }if(value===0){
+    document.title = 'Free Netflix - Created BY TRADEmeTRADER as Jitender or Vijay';
+  }
     return(
         <>
         <div className="banner">
-           <img src="https://i.postimg.cc/SKtc44h8/Untitled-1.jpg" className="bg" alt=""/>
+           <img src={arda.Image} className="bg" alt=""/>
            <div className="content">
-              <Heading color="white" fontSize="50px">Mulan</Heading>
+              <Heading color="white" fontSize="50px">{arda.MovieName}</Heading>
               <h4>
-                <span>2020</span>
-                <span><i>+13</i></span>
-                <span>1h 13</span>
-                <span>Action</span>
+                <span>{arda.Year}</span>
+                <span><i>{arda.Content}</i></span>
+                <span>{arda.Duration}</span>
+                <span>{arda.Geans}</span>
               </h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente voluptatum repudiandae, possimus impedit non dolor fuga omnis amet aspernatur obcaecati aut eligendi! Nostrum temporibus quam facilis ipsa assumenda quidem aliquam neque soluta eveniet magnam dolorem cumque deserunt veniam maiores minus iusto, explicabo totam placeat officia id sequi tenetur. Repellendus, explicabo?</p>
+              <p>{arda.Description}</p>
               <div className="buttons">
                  <Button>Watch</Button>
                  <Button>Download</Button>
