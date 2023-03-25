@@ -3,13 +3,14 @@ import { useRef , useEffect , useState} from "react"
 import axios from "axios";
 import "./Single.css"
 import { ArrowLeftIcon , ArrowRightIcon } from "@chakra-ui/icons"
+import { Link } from "react-router-dom";
 export default function Single({Geans,Title}){
    const [data,datavalue] = useState([]);
    const containerRef = useRef(null);
    const arr = [1,2,3,4,5];
    useEffect(()=>{
      datavalue([]);
-     axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI${Geans}`)
+     axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?${Geans}`)
      .then((res)=>{
         datavalue(res.data);
      })
@@ -31,7 +32,7 @@ export default function Single({Geans,Title}){
     <div className="row">
         <div>
             <Text className="TitleDiv">{Title}</Text>
-            <button className="MoreButton"><Text className="MoreText">More <ArrowRightIcon className="MoreArrow"/></Text></button>
+            <Link to={`/all_content/${Geans.split("1")[0]}/1/&_limit=50`}><button className="MoreButton"><Text className="MoreText">More <ArrowRightIcon className="MoreArrow"/></Text></button></Link>
         </div>
         <div className="row_posters" ref={containerRef}>
             <button className="ScrollLeft" onClick={handelScrollLeft}><ArrowLeftIcon/></button>
