@@ -7,6 +7,7 @@ export default function MainBody({Cate,value}){
   const [arda,arrdata] = useState([]);
   useEffect(() => {
     arrdata([]);
+    window.scrollTo(0,0)
     axios.get("https://jitenderji1137.github.io/zee5apidata/free-netflix-banners.json")
     .then((res)=>{
       arrdata(res.data[value]);
