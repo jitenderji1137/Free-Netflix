@@ -5,7 +5,12 @@ export default function Navbar(){
     const navigate = useNavigate();
     const HandelSubmit = (e)=>{
     e.preventDefault();
-    navigate(`/search/${e.target.SearchText.value}`)
+    if(e.target.SearchText.value === ""){
+    alert("Please enter");
+    }
+    else{
+        navigate(`/search/1/${e.target.SearchText.value}`)
+    }
     }
     return(
         <>

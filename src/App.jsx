@@ -5,9 +5,11 @@ import Search from "./Main/Search";
 import NoPage from "./NoPageFound/NoPageFound";
 import Footer from "./Footer/Footer";
 import Allinone from "./Main/Allinone";
+import Player from "./Main/Player";
 function App() {
   const HomePage = [
     {Geans:"_page=1&_limit=20",Title:"Recent Uploaded ..."},
+    {Geans:"MainCategory=Songs&_page=1&_limit=20",Title:"Songs For you ..."},
     {Geans:"MainCategory=WebSeries&_page=1&_limit=20",Title:"Web Series ..."},
     {Geans:"Geans=Drama&_page=1&_limit=20",Title:"Drama ..."},
     {Geans:"Geans=Crime&_page=1&_limit=20",Title:"Crime ..."},
@@ -56,11 +58,12 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path="/" element={<MainBody Cate={HomePage} value={0}/>}></Route>
-      <Route path="/search/:value" element={<Search/>}></Route>
+      <Route path="/search/:Page/:value" element={<Search/>}></Route>
       <Route path="/movies" element={<MainBody Cate={Movies} value={1}/>}></Route>
       <Route path="/webseries" element={<MainBody Cate={WebSeries} value={2}/>}></Route>
       <Route path="/adult" element={<MainBody Cate={Adult} value={3}/>}></Route>
       <Route path="/all_content/:Geans/:Page/:Limit" element={<Allinone/>}></Route>
+      <Route path="/player/:Title/:Plateform/:Id" element={<Player/>}></Route>
       <Route path="*" element={<NoPage/>}></Route>
     </Routes>
     <Footer/>

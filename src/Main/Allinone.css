@@ -36,7 +36,10 @@
     }
     .images:hover{
         transform: scale(1.1);
-}
+    }
+    .paginationbtn{
+        margin-bottom:80px;
+    }
 }@media screen and (min-width:0px) and (max-width:400px){
     .JustforGrid{
         grid-template-columns: repeat(2,1fr);

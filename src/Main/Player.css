@@ -1,0 +1,41 @@
+#div1{
+    padding-top: 45%;
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+    position: relative;
+    margin-bottom: 80px;
+}
+#title{
+    padding-left: 30px;
+    font-weight: bolder;
+    font-size: 30px;
+    color: white;
+}
+#downloads{
+    padding: 30px 0px 30px 30px;
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+}
+@media screen and (min-width:0px) and (max-width:1000px) {
+    #div1{
+        width: 100%;
+        margin-top: 60px;
+        padding-top: 56.108%; 
+        position: relative;
+    }
+}
+@media screen and (min-width:0px) and (max-width:550px) {
+    #downloads{
+        display:contents;
+    }
+    #title{
+        padding-left: 0px;
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+    #downloads>a>button{
+        margin: 10px 10px 0px 0px;
+    }
+}

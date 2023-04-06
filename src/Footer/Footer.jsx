@@ -1,11 +1,11 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import { MdHome , MdMovie } from "react-icons/md";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch,FaYoutube } from "react-icons/fa";
 import { RiSpyFill } from "react-icons/ri";
 import {IoIosVideocam } from "react-icons/io";
 import { BsFillPersonFill,BsCCircle } from "react-icons/bs";
-import { AiOutlineLinkedin,AiOutlineInstagram,AiOutlineGithub,AiFillTwitterSquare } from "react-icons/ai";
+import { AiOutlineLinkedin,AiOutlineInstagram,AiOutlineGithub } from "react-icons/ai";
 export default function Footer(){
     return(
         <>
@@ -55,8 +55,8 @@ export default function Footer(){
                     <a href="https://www.instagram.com/vijayji1137/" className="icon1 icon--instagram">
                         <i><AiOutlineInstagram/></i>
                     </a>
-                    <a href="/" className="icon1 icon--twitter">
-                        <i><AiFillTwitterSquare/></i>
+                    <a href="https://www.youtube.com/@trademetrader" className="icon1 icon--twitter">
+                        <i><FaYoutube/></i>
                     </a><a href="https://www.linkedin.com/in/jitender1137/" className="icon1 icon--linkedin">
                         <i><AiOutlineLinkedin/></i>
                     </a>
@@ -72,7 +72,7 @@ export default function Footer(){
             <MdHome/>
             <span>Home</span>    
             </button></Link>
-            <Link to="/search/movies"><button className="tab-item">
+            <Link to="/search/1/movies"><button className="tab-item">
             <FaSearch/>
             <span>Search</span>    
             </button></Link>

@@ -87,19 +87,19 @@ footer .by p{
 }
 .icon--instagram:hover{
     background-color:rgb(255, 71, 102);
-    outline-color: #ff00a2;
+    outline-color: #ffffff;
 }
 .icon--twitter:hover{
-    background-color: #1da1f2;
-    outline-color: #1da1f2;
+    background-color: #ff0000;
+    outline-color: #ffffff;
 }
 .icon--linkedin:hover{
     background-color: #0077b5;
-    outline-color: #0077b5;
+    outline-color: #ffffff;
 }
 .icon--github:hover{
     background-color: #000;
-    outline-color: #583131;
+    outline-color: #ffffff;
 }
 @keyframes shake{
     10%{

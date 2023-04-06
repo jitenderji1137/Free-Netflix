@@ -3,8 +3,9 @@ import { useRef , useEffect , useState} from "react"
 import axios from "axios";
 import "./Single.css"
 import { ArrowLeftIcon , ArrowRightIcon } from "@chakra-ui/icons"
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 export default function Single({Geans,Title}){
+  const navigate = useNavigate();
    const [data,datavalue] = useState([]);
    const containerRef = useRef(null);
    const arr = [1,2,3,4,5];
@@ -45,7 +46,7 @@ export default function Single({Geans,Title}){
             :
             data.map((Item)=>{
                 return(
-                    <Image src={Item.Image} title={Item.Title} className="row_poster" key={Item.id}/>
+                  <Image src={Item.Image} title={Item.Title} className="row_poster" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.Plateform}/${Item.FileID}`)}} key={Item.id}/>
                 )
             })
             }
