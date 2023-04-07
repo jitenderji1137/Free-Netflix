@@ -15,6 +15,7 @@ export default function Player(){
     const [data,datavalue] = useState([]);
     const navigate = useNavigate();
     const [Page,pagevalue] = useState(page);
+    const [img,image] = useState("");
     const shareUrl = window.location.href;
     useEffect(()=>{
         datavalue([]);
@@ -27,25 +28,25 @@ export default function Player(){
     useEffect(() => {
         window.scrollTo(0,0);
     }, [Title,Plateform,Id]);
+    useEffect(() =>{
+        axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?FileID=${Id}`)
+        .then((res)=>{
+           image(res.data.Image);
+        })
+    },[Id])
     return(
         <>
         <Helmet>
         <title>{`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`}</title>
         <meta name='description' content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
-        <link rel="icon" href="https://i.postimg.cc/wxNWxtMY/rounded-corners-removebg-preview.png" />
-        <link rel="canonical" href={`/player/${Title.split("_").join(" ")}/${Geans}/${Plateform}/${Id}/${page}`} />
-        <link rel="me" href="https://www.instagram.com/vijayji1137/" />
         <meta name="keywords" content="Free-NetFlix, netflix, freenetflix, vijay, jitender,jitenderji1137,vijayji1137,watch netflix free , download movies free , how to download movies free , watch netflix movies free , how to watch netflix movies for free , netflix clone , netflix free , how to download netflix movies for free , watch free movies , NETFLIX , FREE NETFLIX , how can i watch netflix for free , how to access netflix for free" />
         <meta name="language" content="Hindi" />
-        <meta property="og:title" content={`Free Netflix - ${Title.split("_").join(" ")} || Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay"`} />
-        <meta property="og:description" content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
-        <meta property="og:image" content="https://i.postimg.cc/wxNWxtMY/rounded-corners-removebg-preview.png" />
+        <meta property="og:image" content={img} />
         <meta property="og:url" content={`/player/${Title.split("_").join(" ")}/${Geans}/${Plateform}/${Id}/${page}`}/>
         <meta property="og:type" content="movie" />
         <meta name="country" content="India" />
         <meta name="instagram:username" content="vijayji1137" />
         <meta property="og:type" content="profile" />
-        <meta property="og:url" content="https://www.instagram.com/vijayji1137/" />
         </Helmet>
         {Plateform==="Doodstream"?
         <>
