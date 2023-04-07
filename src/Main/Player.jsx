@@ -42,7 +42,7 @@ export default function Player(){
         <meta name="keywords" content="Free-NetFlix, netflix, freenetflix, vijay, jitender,jitenderji1137,vijayji1137,watch netflix free , download movies free , how to download movies free , watch netflix movies free , how to watch netflix movies for free , netflix clone , netflix free , how to download netflix movies for free , watch free movies , NETFLIX , FREE NETFLIX , how can i watch netflix for free , how to access netflix for free" />
         <meta name="language" content="Hindi" />
         <meta property="og:image" content={img} />
-        <meta property="og:url" content={`/player/${Title.split("_").join(" ")}/${Geans}/${Plateform}/${Id}/${page}`}/>
+        <meta property="og:url" content={shareUrl}/>
         <meta property="og:type" content="movie" />
         <meta name="country" content="India" />
         <meta name="instagram:username" content="vijayji1137" />
