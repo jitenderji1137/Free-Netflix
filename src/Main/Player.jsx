@@ -30,23 +30,22 @@ export default function Player(){
     return(
         <>
         <Helmet>
-        <link href={`${Image.split("---").join("/")}`} rel='image_src'/>
-        <link href={`${shareUrl}`} rel='canonical'/>
-        <title>{`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`}</title>
-        <meta name="keywords" content="Free-NetFlix, netflix, freenetflix, vijay, jitender,jitenderji1137,vijayji1137,watch netflix free , download movies free , how to download movies free , watch netflix movies free , how to watch netflix movies for free , netflix clone , netflix free , how to download netflix movies for free , watch free movies , NETFLIX , FREE NETFLIX , how can i watch netflix for free , how to access netflix for free" />
-        <meta content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`}  name='description'/>
-        <meta content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} property='og:title'/>
-        <meta content={`${shareUrl}`} property='og:url'/>
-        <meta content='Free Netflix - Watch Free Movies or WebSeries online or Download' property='og:site_name'/>
-        <meta content={`${Image.split("---").join("/")}`} property='og:image'/>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
-        <meta name="twitter:description" content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
-        <meta name="twitter:image" content={`${Image.split("---").join("/")}`} />
-        <meta property="og:title" content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
-        <meta property="og:description" content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
+        <title>{`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free online or Download`}</title>
+        <meta name="description" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`} />
+        <meta itemprop="name" content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free online or Download`}></meta>
+        <meta itemprop="description" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`}></meta>
+        <meta itemprop="image" content={`${Image.split("---").join("/")}`}></meta>
+        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta name="twitter:site" content="@Vijayji1137"></meta>
+        <meta name="twitter:title" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`}></meta>
+        <meta name="twitter:description" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`}></meta>
+        <meta name="twitter:creator" content="@Vijayji1137"></meta>
+        <meta name="twitter:image:src" content={`${Image.split("---").join("/")}`}></meta>
+        <meta property="og:title" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`} />
         <meta property="og:url" content={`${shareUrl}`} />
         <meta property="og:image" content={`${Image.split("---").join("/")}`} />
+        <meta property="og:site_name" content="free-netflix,FREE-NETFLIX,Free-Netflix,Free Netflix" />
+        <meta property="og:description" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`} />
         </Helmet>
         {Plateform==="Doodstream"?
         <>
