@@ -1,11 +1,14 @@
 import { useParams ,useNavigate } from "react-router-dom"
 import { useEffect , useState} from "react";
-import {Button,Center } from "@chakra-ui/react";
+import {Button,Center,Text } from "@chakra-ui/react";
 import axios from "axios";
 import { Helmet } from 'react-helmet-async';
 import "./Player.css";
 import "./Allinone.css"
-import { FacebookShareButton,FacebookIcon} from "react-share";
+import { FaLink } from "react-icons/fa";
+import Swal from 'sweetalert2'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { FacebookShareButton,LinkedinShareButton,EmailShareButton,EmailIcon,LinkedinIcon,WhatsappShareButton,WhatsappIcon,FacebookIcon,TelegramShareButton,TelegramIcon,TwitterShareButton,TwitterIcon} from "react-share";
 export default function Player(){
     const { Title , Geans , Plateform , Id , page } = useParams();
     const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
@@ -113,10 +116,51 @@ export default function Player(){
         <div id="downloads">
         <a href={`https://filemoon.sx/download/${Id}`} target="_blank" rel="noreferrer"><Button>Download</Button></a></div>
         </>:""}
-
-        <FacebookShareButton url={shareUrl}>
-        <FacebookIcon size={32} round={true} />
-        </FacebookShareButton>
+        <div>
+            <Text style={{margin:"0px 0px 0px 30px",color:"white",fontWeight:"bolder",fontSize:"20px"}}>Share us on </Text>
+            <div style={{display:"flex"}}>
+            <FacebookShareButton url={shareUrl} style={{margin:"0px 0px 0px 30px"}}>
+                <FacebookIcon size={32} borderRadius={10} />
+            </FacebookShareButton>
+            <TelegramShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>
+                <TelegramIcon size={32} borderRadius={10} />
+            </TelegramShareButton>
+            <TwitterShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>
+                <TwitterIcon size={32} borderRadius={10} />
+            </TwitterShareButton>
+            <WhatsappShareButton borderRadius={10} style={{margin:"0px 0px 0px 20px"}}>
+                <WhatsappIcon size={32} borderRadius={10} />
+            </WhatsappShareButton>
+            <LinkedinShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>
+                <LinkedinIcon size={32} borderRadius={10} />
+            </LinkedinShareButton>
+            <EmailShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>
+                <EmailIcon size={32} borderRadius={10} />
+            </EmailShareButton>
+            <CopyToClipboard text={shareUrl}
+            onCopy={() =>{
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'bottom-end',
+                    showConfirmButton: false,
+                    timer: 5000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.addEventListener('mouseenter', Swal.stopTimer)
+                      toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                  })
+                  
+                  Toast.fire({
+                    icon: 'success',
+                    title: 'Link successfully Copeid ...'
+                  })
+            }}>
+            <FaLink style={{backgroundColor:"red",fontSize:"32px",color:"white",borderRadius:"5px",padding:"5px",margin:"0px 0px 0px 20px",cursor:"pointer"}}/>
+            </CopyToClipboard>
+            </div>
+        </div>
+        
         <h1 id="heading">All {Geans}</h1>
         <div className="JustforGrid">
         {data.length===0?arr.map((I,Index)=>{
