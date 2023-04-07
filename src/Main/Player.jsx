@@ -1,15 +1,47 @@
-import { useParams } from "react-router-dom"
+import { useParams ,useNavigate } from "react-router-dom"
 import { useEffect , useState} from "react";
-import {Button } from "@chakra-ui/react";
-import Single from "./Single";
+import {Button,Center } from "@chakra-ui/react";
+import axios from "axios";
+import { Helmet } from 'react-helmet-async';
 import "./Player.css";
+import "./Allinone.css"
 export default function Player(){
-    const { Title , Plateform , Id } = useParams();
+    const { Title , Geans , Plateform , Id , page } = useParams();
+    const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+    const [data,datavalue] = useState([]);
+    const navigate = useNavigate();
+    const [Page,pagevalue] = useState(page);
+    useEffect(()=>{
+        datavalue([]);
+        window.scrollTo(0,0);
+     axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?_page=${Page}&_limit=30&MainCategory=${Geans}`)
+     .then((res)=>{
+        datavalue(res.data);
+     })
+    },[Page,Geans])
     useEffect(() => {
         window.scrollTo(0,0);
     }, [Title,Plateform,Id]);
     return(
         <>
+        <Helmet>
+        <title>{`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`}</title>
+        <meta name='description' content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
+        <link rel="icon" href="https://i.postimg.cc/wxNWxtMY/rounded-corners-removebg-preview.png" />
+        <link rel="canonical" href={`/player/${Title.split("_").join(" ")}/${Geans}/${Plateform}/${Id}/${page}`} />
+        <link rel="me" href="https://www.instagram.com/vijayji1137/" />
+        <meta name="keywords" content="Free-NetFlix, netflix, freenetflix, vijay, jitender,jitenderji1137,vijayji1137,watch netflix free , download movies free , how to download movies free , watch netflix movies free , how to watch netflix movies for free , netflix clone , netflix free , how to download netflix movies for free , watch free movies , NETFLIX , FREE NETFLIX , how can i watch netflix for free , how to access netflix for free" />
+        <meta name="language" content="Hindi" />
+        <meta property="og:title" content={`Free Netflix - ${Title.split("_").join(" ")} || Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay"`} />
+        <meta property="og:description" content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
+        <meta property="og:image" content="https://i.postimg.cc/wxNWxtMY/rounded-corners-removebg-preview.png" />
+        <meta property="og:url" content={`/player/${Title.split("_").join(" ")}/${Geans}/${Plateform}/${Id}/${page}`}/>
+        <meta property="og:type" content="movie" />
+        <meta name="country" content="India" />
+        <meta name="instagram:username" content="vijayji1137" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://www.instagram.com/vijayji1137/" />
+        </Helmet>
         {Plateform==="Doodstream"?
         <>
          <div id="div1" style={{border: '1px solid rgb(255, 255, 254)', 
@@ -79,10 +111,35 @@ export default function Player(){
         <div id="downloads">
         <a href={`https://filemoon.sx/download/${Id}`} target="_blank" rel="noreferrer"><Button>Download</Button></a></div>
         </>:""}
+
+
+
+        <h1 id="heading">All {Geans}</h1>
+        <div className="JustforGrid">
+        {data.length===0?arr.map((I,Index)=>{
+            return(
+                <>
+                <img src="https://i.postimg.cc/Cxr8bfBf/Untitled-design.png" className="images" alt="" key={Index}/>
+                </>
+            );
+        }):""}
+        {
+            data.map((Item,Index)=>{
+                return(
+                    <>
+                <img src={Item.Image} className="images" title={Item.Title} alt="" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.MainCategory}/${Item.Plateform}/${Item.FileID}/1`)}} key={Index}/>
+                    </>
+                )
+            })
+        }
+        </div>
+        <Center>
+            <div className="paginationbtn">
+                <Button onClick={()=>{pagevalue(+Page<=1?1:+Page-1)}}>...Previous</Button>
+                <Button isDisabled={true}>{Page}</Button>
+                <Button onClick={()=>{pagevalue(+Page+1)}}>Next...</Button>
+            </div>
+        </Center>
         </>
     ) 
 }
-
-
-
-

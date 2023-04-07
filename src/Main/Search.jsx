@@ -7,7 +7,7 @@ export default function Search(){
     const { Page,value} = useParams();
     const navigate = useNavigate();
     const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
-    document.title = `Free Netflix - Search = ${value} - Created BY TRADEmeTRADER as Jitender or Vijay`;
+    document.title = `Free Netflix - Search = ${value} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`;
     const [data,datavalue] = useState([]);
     const [text,textval] = useState("");
     useEffect(()=>{
@@ -40,7 +40,7 @@ export default function Search(){
             data.map((Item,Index)=>{
                 return(
                     <>
-                <img src={Item.Image} className="images" title={Item.Title} alt="" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.Plateform}/${Item.FileID}`)}} key={Index}/>
+                <img src={Item.Image} className="images" title={Item.Title} alt="" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.MainCategory}/${Item.Plateform}/${Item.FileID}/1`)}} key={Index}/>
                     </>
                 )
             })

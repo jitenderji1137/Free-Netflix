@@ -63,7 +63,7 @@ function App() {
       <Route path="/webseries" element={<MainBody Cate={WebSeries} value={2}/>}></Route>
       <Route path="/adult" element={<MainBody Cate={Adult} value={3}/>}></Route>
       <Route path="/all_content/:Geans/:Page/:Limit" element={<Allinone/>}></Route>
-      <Route path="/player/:Title/:Plateform/:Id" element={<Player/>}></Route>
+      <Route path="/player/:Title/:Geans/:Plateform/:Id/:page" element={<Player/>}></Route>
       <Route path="*" element={<NoPage/>}></Route>
     </Routes>
     <Footer/>

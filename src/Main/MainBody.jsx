@@ -3,8 +3,10 @@ import "../Nabvar/navbar.css"
 import { useEffect , useState } from "react"
 import Single from "./Single"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 export default function MainBody({Cate,value}){
   const [arda,arrdata] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     arrdata([]);
     window.scrollTo(0,0)
@@ -20,7 +22,7 @@ export default function MainBody({Cate,value}){
   }if(value===3){
     document.title = 'Free Netflix - All Adult - Created BY TRADEmeTRADER as Jitender or Vijay';
   }if(value===0){
-    document.title = 'Free Netflix - Created BY TRADEmeTRADER as Jitender or Vijay';
+    document.title = 'Free Netflix - Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay';
   }
     return(
         <>
@@ -36,8 +38,8 @@ export default function MainBody({Cate,value}){
               </h4>
               <p>{arda.Description}</p>
               <div className="buttons">
-                 <Button>Watch</Button>
-                 <Button>Download</Button>
+                 <Button onClick={()=>{navigate(`/player/${arda.MovieName.split(" ").join("_")}/${arda.MainCategory}/${arda.Plateform}/${arda.Link}/1`)}}>Watch</Button>
+                 <Button onClick={()=>{navigate(`/player/${arda.MovieName.split(" ").join("_")}/${arda.MainCategory}/${arda.Plateform}/${arda.Link}/1`)}}>Download</Button>
               </div>
            </div>
         </div>
