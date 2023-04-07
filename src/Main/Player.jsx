@@ -37,19 +37,19 @@ export default function Player(){
     return(
         <>
         <Helmet>
+        <link href={`${img}`} rel='image_src'/>
+        <link href={`${shareUrl}`} rel='canonical'/>
         <title>{`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`}</title>
         <meta name="keywords" content="Free-NetFlix, netflix, freenetflix, vijay, jitender,jitenderji1137,vijayji1137,watch netflix free , download movies free , how to download movies free , watch netflix movies free , how to watch netflix movies for free , netflix clone , netflix free , how to download netflix movies for free , watch free movies , NETFLIX , FREE NETFLIX , how can i watch netflix for free , how to access netflix for free" />
-        <link href={shareUrl} rel='canonical'/>
         <meta content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`}  name='description'/>
-        <link href={img} rel='image_src'/>
         <meta content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} property='og:title'/>
-        <meta content={shareUrl} property='og:url'/>
+        <meta content={`${shareUrl}`} property='og:url'/>
         <meta content='Free Netflix - Watch Free Movies or WebSeries online or Download' property='og:site_name'/>
-        <meta content={img} property='og:image'/>
-        <meta content={img} name='twitter:image'/>
+        <meta content={`${img}`} property='og:image'/>
+        <meta content={`${img}`} name='twitter:image'/>
         <meta content='summary_large_image' name='twitter:card'/>
         <meta content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} name='twitter:title'/>
-        <meta content={shareUrl} name='twitter:domain'/>
+        <meta content={`${shareUrl}`} name='twitter:domain'/>
         <meta content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} name='twitter:description'/>
         </Helmet>
         {Plateform==="Doodstream"?
