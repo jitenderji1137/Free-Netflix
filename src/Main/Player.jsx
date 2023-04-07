@@ -116,10 +116,10 @@ export default function Player(){
         <div id="downloads">
         <a href={`https://filemoon.sx/download/${Id}`} target="_blank" rel="noreferrer"><Button>Download</Button></a></div>
         </>:""}
-        <div>
-            <Text style={{margin:"0px 0px 0px 30px",color:"white",fontWeight:"bolder",fontSize:"20px"}}>Share us on </Text>
+        <div className="share">
+            <Text style={{color:"white",fontWeight:"bolder",fontSize:"20px"}}>Share us on </Text>
             <div style={{display:"flex"}}>
-            <FacebookShareButton url={shareUrl} style={{margin:"0px 0px 0px 30px"}}>
+            <FacebookShareButton url={shareUrl} className="share">
                 <FacebookIcon size={32} borderRadius={10} />
             </FacebookShareButton>
             <TelegramShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>

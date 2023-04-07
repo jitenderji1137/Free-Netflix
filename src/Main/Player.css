@@ -18,6 +18,9 @@
     width: 500px;
     justify-content: space-between;
 }
+.share{
+    padding: 30px 0px 30px 30px;
+}
 @media screen and (min-width:0px) and (max-width:1000px) {
     #div1{
         width: 100%;
@@ -29,6 +32,9 @@
 @media screen and (min-width:0px) and (max-width:550px) {
     #downloads{
         display:contents;
+    }
+    .share{
+        padding: 30px 0px 30px 0px;
     }
     #title{
         padding-left: 0px;
