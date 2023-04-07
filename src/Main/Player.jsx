@@ -5,12 +5,14 @@ import axios from "axios";
 import { Helmet } from 'react-helmet-async';
 import "./Player.css";
 import "./Allinone.css"
+import { FacebookShareButton,FacebookIcon,OKShareCount,PinterestShareCount,RedditShareCount,} from "react-share";
 export default function Player(){
     const { Title , Geans , Plateform , Id , page } = useParams();
     const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
     const [data,datavalue] = useState([]);
     const navigate = useNavigate();
     const [Page,pagevalue] = useState(page);
+    const shareUrl = window.location.href;
     useEffect(()=>{
         datavalue([]);
         window.scrollTo(0,0);
@@ -112,8 +114,9 @@ export default function Player(){
         <a href={`https://filemoon.sx/download/${Id}`} target="_blank" rel="noreferrer"><Button>Download</Button></a></div>
         </>:""}
 
-
-
+        <FacebookShareButton url={shareUrl}>
+        <FacebookIcon size={32} round={true} />
+        </FacebookShareButton>
         <h1 id="heading">All {Geans}</h1>
         <div className="JustforGrid">
         {data.length===0?arr.map((I,Index)=>{
