@@ -24,16 +24,14 @@ export default function Player(){
      .then((res)=>{
         datavalue(res.data);
      })
-    },[Page,Geans])
-    useEffect(() => {
-        window.scrollTo(0,0);
-    }, [Title,Plateform,Id]);
-    useEffect(() =>{
-        axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?FileID=${Id}`)
+     axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?FileID=${Id}`)
         .then((res)=>{
            image(res.data.Image);
         })
-    },[Id])
+    },[Page,Geans,Id])
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, [Title,Plateform,Id]);
     return(
         <>
         <Helmet>
