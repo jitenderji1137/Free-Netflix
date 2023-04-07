@@ -43,6 +43,10 @@ export default function Player(){
         <meta name="twitter:title" content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
         <meta name="twitter:description" content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
         <meta name="twitter:image" content={`${Image.split("---").join("/")}`} />
+        <meta property="og:title" content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
+        <meta property="og:description" content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
+        <meta property="og:url" content={`${shareUrl}`} />
+        <meta property="og:image" content={`${Image.split("---").join("/")}`} />
         </Helmet>
         {Plateform==="Doodstream"?
         <>
