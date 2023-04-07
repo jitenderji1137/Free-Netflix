@@ -10,12 +10,11 @@ import Swal from 'sweetalert2'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { FacebookShareButton,LinkedinShareButton,EmailShareButton,EmailIcon,LinkedinIcon,WhatsappShareButton,WhatsappIcon,FacebookIcon,TelegramShareButton,TelegramIcon,TwitterShareButton,TwitterIcon} from "react-share";
 export default function Player(){
-    const { Title , Geans , Plateform , Id , page } = useParams();
+    const { Title , Geans , Plateform , Id , page,Image } = useParams();
     const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
     const [data,datavalue] = useState([]);
     const navigate = useNavigate();
     const [Page,pagevalue] = useState(page);
-    const [img,image] = useState("");
     const shareUrl = window.location.href;
     useEffect(()=>{
         datavalue([]);
@@ -24,10 +23,6 @@ export default function Player(){
      .then((res)=>{
         datavalue(res.data);
      })
-     axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?FileID=${Id}`)
-        .then((res)=>{
-           image(res.data.Image);
-        })
     },[Page,Geans,Id])
     useEffect(() => {
         window.scrollTo(0,0);
@@ -35,7 +30,7 @@ export default function Player(){
     return(
         <>
         <Helmet>
-        <link href={`${img}`} rel='image_src'/>
+        <link href={`${Image.split("---").join("/")}`} rel='image_src'/>
         <link href={`${shareUrl}`} rel='canonical'/>
         <title>{`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`}</title>
         <meta name="keywords" content="Free-NetFlix, netflix, freenetflix, vijay, jitender,jitenderji1137,vijayji1137,watch netflix free , download movies free , how to download movies free , watch netflix movies free , how to watch netflix movies for free , netflix clone , netflix free , how to download netflix movies for free , watch free movies , NETFLIX , FREE NETFLIX , how can i watch netflix for free , how to access netflix for free" />
@@ -43,8 +38,8 @@ export default function Player(){
         <meta content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} property='og:title'/>
         <meta content={`${shareUrl}`} property='og:url'/>
         <meta content='Free Netflix - Watch Free Movies or WebSeries online or Download' property='og:site_name'/>
-        <meta content={`${img}`} property='og:image'/>
-        <meta content={`${img}`} name='twitter:image'/>
+        <meta content={`${Image.split("---").join("/")}`} property='og:image'/>
+        <meta content={`${Image.split("---").join("/")}`} name='twitter:image'/>
         <meta content='summary_large_image' name='twitter:card'/>
         <meta content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} name='twitter:title'/>
         <meta content={`${shareUrl}`} name='twitter:domain'/>

@@ -46,7 +46,7 @@ export default function Single({Geans,Title}){
             :
             data.map((Item)=>{
                 return(
-                  <Image src={Item.Image} title={Item.Title} className="row_poster" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.MainCategory}/${Item.Plateform}/${Item.FileID}/1`)}} key={Item.id}/>
+                  <Image src={Item.Image} title={Item.Title} className="row_poster" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.MainCategory}/${Item.Plateform}/${Item.FileID}/1/${Item.Image.split("/").join("---")}`)}} key={Item.id}/>
                 )
             })
             }
