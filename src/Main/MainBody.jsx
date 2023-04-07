@@ -38,8 +38,8 @@ export default function MainBody({Cate,value}){
               </h4>
               <p>{arda.Description}</p>
               <div className="buttons">
-                 <Button onClick={()=>{navigate(`/player/${arda.MovieName.split(" ").join("_")}/${arda.MainCategory}/${arda.Plateform}/${arda.Link}/1`)}}>Watch</Button>
-                 <Button onClick={()=>{navigate(`/player/${arda.MovieName.split(" ").join("_")}/${arda.MainCategory}/${arda.Plateform}/${arda.Link}/1`)}}>Download</Button>
+                 <Button onClick={()=>{navigate(`/player/${arda.MovieName.split(" ").join("_")}/${arda.MainCategory}/${arda.Plateform}/${arda.Link}/1/${arda.Image.split("/").join("---")}`)}}>Watch</Button>
+                 <Button onClick={()=>{navigate(`/player/${arda.MovieName.split(" ").join("_")}/${arda.MainCategory}/${arda.Plateform}/${arda.Link}/1/${arda.Image.split("/").join("---")}`)}}>Download</Button>
               </div>
            </div>
         </div>
