@@ -39,11 +39,10 @@ export default function Player(){
         <meta content={`${shareUrl}`} property='og:url'/>
         <meta content='Free Netflix - Watch Free Movies or WebSeries online or Download' property='og:site_name'/>
         <meta content={`${Image.split("---").join("/")}`} property='og:image'/>
-        <meta content={`${Image.split("---").join("/")}`} name='twitter:image'/>
-        <meta content='summary_large_image' name='twitter:card'/>
-        <meta content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} name='twitter:title'/>
-        <meta content={`${shareUrl}`} name='twitter:domain'/>
-        <meta content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} name='twitter:description'/>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
+        <meta name="twitter:description" content={`Watch - ${Title.split("_").join(" ")} for free ||  Watch Free Movies or WebSeries online or Download || Created BY TRADEmeTRADER as Jitender or Vijay`} />
+        <meta name="twitter:image" content={`${Image.split("---").join("/")}`} />
         </Helmet>
         {Plateform==="Doodstream"?
         <>
