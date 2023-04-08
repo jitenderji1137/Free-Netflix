@@ -3,6 +3,7 @@ import { useNavigate , Link } from "react-router-dom"
 import { useEffect } from "react";
 import "./navbar.css"
 import WebFont from 'webfontloader';
+import Swal from 'sweetalert2'
 export default function Navbar(){
     const navigate = useNavigate();
     useEffect(() => {
@@ -16,7 +17,15 @@ export default function Navbar(){
     const HandelSubmit = (e)=>{
     e.preventDefault();
     if(e.target.SearchText.value === ""){
-    alert("Please enter");
+        Swal.fire({
+            title: 'Type Something to Search ...',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
     }
     else{
         navigate(`/search/1/${e.target.SearchText.value}`)
