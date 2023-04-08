@@ -143,7 +143,7 @@ export default function Player(){
                     toast: true,
                     position: 'bottom-end',
                     showConfirmButton: false,
-                    timer: 105000,
+                    timer: 5000,
                     timerProgressBar: true,
                     didOpen: (toast) => {
                       toast.addEventListener('mouseenter', Swal.stopTimer)
