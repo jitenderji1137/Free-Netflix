@@ -4,6 +4,13 @@
     box-sizing: border-box;
     font-family:sans-serif;
 }
+.swal2-icon.swal2-warning {
+    border-color: #ff0000!important;
+    color: #ff0000!important;
+}
+.swal2-title{
+    color: black!important;
+}
 header{
     position: fixed;
     top: 0;

@@ -18,13 +18,11 @@ export default function Navbar(){
     e.preventDefault();
     if(e.target.SearchText.value === ""){
         Swal.fire({
+            position: 'center',
+            icon: 'warning',
             title: 'Type Something to Search ...',
-            showClass: {
-              popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-              popup: 'animate__animated animate__fadeOutUp'
-            }
+            showConfirmButton: false,
+            timer: 2500
           })
     }
     else{

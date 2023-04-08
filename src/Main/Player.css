@@ -6,6 +6,12 @@
     position: relative;
     margin-bottom: 80px;
 }
+.swal2-icon.swal2-success [class^=swal2-success-line]{
+    background-color: red!important;
+}
+.swal2-icon.swal2-success .swal2-success-ring{
+    border: .25em solid rgb(255 0 0);
+}
 #title{
     padding-left: 30px;
     font-weight: bolder;
