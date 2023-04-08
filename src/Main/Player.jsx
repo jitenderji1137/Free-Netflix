@@ -128,7 +128,7 @@ export default function Player(){
             <a href={`https://twitter.com/intent/tweet?text=${Title.split("_").join(" ")}&url=${shareUrl}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <TwitterIcon size={32} borderRadius={10} />
             </a>
-            <a href={`https://api.whatsapp.com/send?text=[${Title.split("_").join(" ")}] [${shareUrl}]`} borderRadius={10} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
+            <a href={`https://api.whatsapp.com/send?text=[${Title.split("_").join(" ")}] [Watch Now For Free or Download in HD] [${shareUrl}]`} borderRadius={10} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <WhatsappIcon size={32} borderRadius={10} />
             </a>
             <a href={`http://pinterest.com/pin/create/button/?url=${shareUrl}&media=${Image.split("---").join("/")}&description=${Title.split("_").join(" ")} ||  Watch Free online or Download`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
