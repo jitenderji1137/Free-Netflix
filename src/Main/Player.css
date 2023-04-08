@@ -10,7 +10,7 @@
     background-color: red!important;
 }
 .swal2-icon.swal2-success .swal2-success-ring{
-    border: .25em solid rgb(255 0 0);
+    border: .25em solid rgb(255 0 0)!important;
 }
 #title{
     padding-left: 30px;
