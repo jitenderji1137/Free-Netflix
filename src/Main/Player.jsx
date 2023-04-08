@@ -1,6 +1,6 @@
 import { useParams ,useNavigate } from "react-router-dom"
 import { useEffect , useState} from "react";
-import {Button,Center,Text } from "@chakra-ui/react";
+import {Button,Center,Text} from "@chakra-ui/react";
 import axios from "axios";
 import { Helmet } from 'react-helmet-async';
 import "./Player.css";
@@ -8,7 +8,7 @@ import "./Allinone.css"
 import { FaLink } from "react-icons/fa";
 import Swal from 'sweetalert2'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import { FacebookShareButton,LinkedinShareButton,EmailShareButton,EmailIcon,LinkedinIcon,WhatsappShareButton,WhatsappIcon,FacebookIcon,TelegramShareButton,TelegramIcon,TwitterShareButton,TwitterIcon} from "react-share";
+import { PinterestIcon,EmailIcon,WhatsappIcon,FacebookIcon,TelegramIcon,TwitterIcon} from "react-share";
 export default function Player(){
     const { Title , Geans , Plateform , Id , page,Image } = useParams();
     const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
@@ -119,24 +119,24 @@ export default function Player(){
         <div className="share">
             <Text style={{color:"white",fontWeight:"bolder",fontSize:"20px"}}>Share us on </Text>
             <div style={{display:"flex"}}>
-            <FacebookShareButton url={shareUrl} className="share">
+            <a href={`https://www.facebook.com/sharer.php?u=${shareUrl}`} target="_blank" rel="noreferrer">
                 <FacebookIcon size={32} borderRadius={10} />
-            </FacebookShareButton>
-            <TelegramShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>
+            </a>
+            <a href={`https://t.me/share/url?url=${shareUrl}&text=${Title.split("_").join(" ")}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <TelegramIcon size={32} borderRadius={10} />
-            </TelegramShareButton>
-            <TwitterShareButton url={shareUrl} text={Title.split("_").join(" ")} style={{margin:"0px 0px 0px 20px"}}>
+            </a>
+            <a href={`https://twitter.com/intent/tweet?text=${Title.split("_").join(" ")}&url=${shareUrl}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <TwitterIcon size={32} borderRadius={10} />
-            </TwitterShareButton>
-            <WhatsappShareButton borderRadius={10} style={{margin:"0px 0px 0px 20px"}}>
+            </a>
+            <a href={`https://api.whatsapp.com/send?text=[${Title.split("_").join(" ")}] [${shareUrl}]`} borderRadius={10} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <WhatsappIcon size={32} borderRadius={10} />
-            </WhatsappShareButton>
-            <LinkedinShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>
-                <LinkedinIcon size={32} borderRadius={10} />
-            </LinkedinShareButton>
-            <EmailShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>
+            </a>
+            <a href={`http://pinterest.com/pin/create/button/?url=${shareUrl}&media=${Image.split("---").join("/")}&description=${Title.split("_").join(" ")} ||  Watch Free online or Download`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
+                <PinterestIcon size={32} borderRadius={10} />
+            </a>
+            <a href={`mailto:?subject=${Title.split("_").join(" ")}&body=${shareUrl}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <EmailIcon size={32} borderRadius={10} />
-            </EmailShareButton>
+            </a>
             <CopyToClipboard text={shareUrl}
             onCopy={() =>{
                 const Toast = Swal.mixin({
