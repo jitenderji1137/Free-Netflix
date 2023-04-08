@@ -125,7 +125,7 @@ export default function Player(){
             <TelegramShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>
                 <TelegramIcon size={32} borderRadius={10} />
             </TelegramShareButton>
-            <TwitterShareButton url={shareUrl} style={{margin:"0px 0px 0px 20px"}}>
+            <TwitterShareButton url={shareUrl} text={Title.split("_").join(" ")} style={{margin:"0px 0px 0px 20px"}}>
                 <TwitterIcon size={32} borderRadius={10} />
             </TwitterShareButton>
             <WhatsappShareButton borderRadius={10} style={{margin:"0px 0px 0px 20px"}}>
