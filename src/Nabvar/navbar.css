@@ -157,9 +157,35 @@ padding-left: 0;
     .banner .bg{
         height: auto;
         object-fit: contain;
+        top:59px;
     }
     .Mycarts{
         padding-bottom: 50px;
-        margin-top: -200px;
+        margin-top: -20px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:450px) {
+    .Mycarts{
+        margin-top: -70px;
+    }
+    .banner {
+        min-height: 39vh;
+    }
+    
+    
+}
+@media screen and (min-width:0px) and (max-width:400px) {
+    .Mycarts{
+        margin-top: -40px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:360px) {
+    .Mycarts{
+        margin-top: -55px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:300px) {
+    .Mycarts{
+        margin-top: -55px;
     }
 }

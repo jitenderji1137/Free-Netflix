@@ -26,7 +26,8 @@
     "react-share": "^4.4.1",
     "react-youtube": "^10.1.0",
     "sweetalert2": "^11.7.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
