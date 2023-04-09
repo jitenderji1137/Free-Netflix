@@ -12,6 +12,10 @@
 .swal2-icon.swal2-success .swal2-success-ring{
     border: .25em solid rgb(255 0 0)!important;
 }
+.oneimage{
+    max-width:300px;
+    border-radius: 10px;
+}
 #title{
     padding-left: 30px;
     font-weight: bolder;
@@ -49,5 +53,10 @@
     }
     #downloads>a>button{
         margin: 10px 10px 0px 0px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:550px) {
+    .oneimage{
+        max-width:200px;
     }
 }

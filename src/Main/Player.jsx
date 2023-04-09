@@ -118,6 +118,7 @@ export default function Player(){
         <a href={`https://filemoon.sx/download/${Id}`} target="_blank" rel="noreferrer"><Button>Download</Button></a></div>
         </>:""}
         <div className="share">
+            <img src={Image.split("---").join("/")} className="oneimage" alt=""/>
             <Text style={{color:"white",fontWeight:"bolder",fontSize:"20px"}}>Share us on </Text>
             <div style={{display:"flex"}}>
             <a href={`https://www.facebook.com/sharer.php?u=${shareUrl}`} target="_blank" rel="noreferrer">
