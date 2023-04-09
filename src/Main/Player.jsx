@@ -41,11 +41,12 @@ export default function Player(){
         <meta name="twitter:description" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`}></meta>
         <meta name="twitter:creator" content="@Vijayji1137"></meta>
         <meta name="twitter:image:src" content={`${Image.split("---").join("/")}`}></meta>
-        <meta property="og:title" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`} />
+        <meta property="og:site_name" content="free-Netflix" />
         <meta property="og:url" content={`${shareUrl}`} />
-        <meta property="og:image" content={`${Image.split("---").join("/")}`} />
-        <meta property="og:site_name" content="free-netflix,FREE-NETFLIX,Free-Netflix,Free Netflix" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`} />
         <meta property="og:description" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`} />
+        <meta property="og:image" content={`${Image.split("---").join("/")}`} />
         </Helmet>
         {Plateform==="Doodstream"?
         <>
