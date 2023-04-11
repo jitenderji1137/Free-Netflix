@@ -14,7 +14,7 @@ export default function Search(){
         datavalue([]);
         textval("");
         window.scrollTo(0,0);
-     axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?_page=${Page}&_limit=30&q=${value}`)
+     axios.get(`${process.env.REACT_APP_Free_NetFlix}?_page=${Page}&_limit=30&q=${value}`)
      .then((res)=>{
         datavalue(res.data);
         if(res.data.length===0){

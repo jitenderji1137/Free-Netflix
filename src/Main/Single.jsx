@@ -11,7 +11,7 @@ export default function Single({Geans,Title}){
    const arr = [1,2,3,4,5];
    useEffect(()=>{
      datavalue([]);
-     axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?${Geans}`)
+     axios.get(`${process.env.REACT_APP_Free_NetFlix}?${Geans}`)
      .then((res)=>{
         datavalue(res.data);
      })

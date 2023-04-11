@@ -19,7 +19,7 @@ export default function Player(){
     useEffect(()=>{
         datavalue([]);
         window.scrollTo(0,0);
-     axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?_page=${Page}&_limit=30&MainCategory=${Geans}`)
+     axios.get(`${process.env.REACT_APP_Free_NetFlix}?_page=${Page}&_limit=30&MainCategory=${Geans}`)
      .then((res)=>{
         datavalue(res.data);
      })

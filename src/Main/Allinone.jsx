@@ -13,7 +13,7 @@ export default function Allinone(){
         datavalue([]);
         textval("");
         window.scrollTo(0,0);
-     axios.get(`https://netflix-api-for-project.onrender.com/NetFlixAPI?${Geans}${Page}${Limit}`)
+     axios.get(`${process.env.REACT_APP_Free_NetFlix}?${Geans}${Page}${Limit}`)
      .then((res)=>{
         datavalue(res.data);
         if(res.data.length===0){
