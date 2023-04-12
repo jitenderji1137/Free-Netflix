@@ -8,7 +8,7 @@ import Allinone from "./Main/Allinone";
 import Player from "./Main/Player";
 function App() {
   const HomePage = [
-    {Geans:"MainCategory=Movies&MainCategory=WebSeries&MainCategory=Songs&_page=1&_limit=20",Title:"Recent Uploaded ..."},
+    {Geans:"MainCategory=Movies&MainCategory=WebSeries&_page=1&_limit=20",Title:"Recent Uploaded ..."},
     {Geans:"MainCategory=Songs&_page=1&_limit=20",Title:"Songs For you ..."},
     {Geans:"MainCategory=WebSeries&_page=1&_limit=20",Title:"Web Series ..."},
     {Geans:"Geans=Drama&_page=1&_limit=20",Title:"Drama ..."},
