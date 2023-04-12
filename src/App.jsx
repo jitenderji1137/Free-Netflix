@@ -6,6 +6,7 @@ import NoPage from "./NoPageFound/NoPageFound";
 import Footer from "./Footer/Footer";
 import Allinone from "./Main/Allinone";
 import Player from "./Main/Player";
+import APIDocs from "./API-Docs/ApiDocs";
 function App() {
   const HomePage = [
     {Geans:"MainCategory=Movies&MainCategory=WebSeries&_page=1&_limit=20",Title:"Recent Uploaded ..."},
@@ -64,6 +65,7 @@ function App() {
       <Route path="/adult" element={<MainBody Cate={Adult} value={3}/>}></Route>
       <Route path="/all_content/:Geans/:Page/:Limit" element={<Allinone/>}></Route>
       <Route path="/player/:Title/:Geans/:Plateform/:Id/:page/:Image" element={<Player/>}></Route>
+      <Route path="/api-docs" element={<APIDocs/>}/>
       <Route path="*" element={<NoPage/>}></Route>
     </Routes>
     <Footer/>

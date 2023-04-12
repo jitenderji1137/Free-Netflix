@@ -29,6 +29,9 @@ export default function Footer(){
                     <li><Link to="/webseries">Web Series</Link></li>
                 </ul>
                 <ul>
+                    <li><Link to="/search/1/movies">Search</Link></li>
+                </ul>
+                <ul>
                     <li><Link to="/adult">Adult 18+</Link></li>
                 </ul>    
             </div>
@@ -44,6 +47,9 @@ export default function Footer(){
                 </ul>
                 <ul>
                     <li><a href="mailto:trademetrader1137@gmail.com">Email</a></li>
+                </ul>
+                <ul>
+                    <li><Link to="/api-docs">API Docs</Link></li>
                 </ul>    
             </div>
             </div>
