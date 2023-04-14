@@ -139,6 +139,9 @@ footer .by p{
     .hero{
         display: none;
     }
+    #wa-widget-send-button{
+        display: none!important;
+    }
     .tab-bar{
         position: fixed;
         bottom: 0;
