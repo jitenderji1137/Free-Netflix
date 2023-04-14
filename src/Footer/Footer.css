@@ -16,6 +16,9 @@
     flex-wrap: wrap;
     flex: 1;
 }
+.wa-chat-box-poweredby{
+    display: none !important;;
+}
 .flex{
     display: flex;
 }
