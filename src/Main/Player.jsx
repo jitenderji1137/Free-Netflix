@@ -27,6 +27,24 @@ export default function Player(){
     useEffect(() => {
         window.scrollTo(0,0);
     }, [Title,Plateform,Id]);
+    const oncopy = ()=>{
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'bottom-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Link successfully Copeid ...'
+          })
+    }
     return(
         <>
         <Helmet>
@@ -117,6 +135,7 @@ export default function Player(){
         <div id="downloads">
         <a href={`https://filemoon.sx/download/${Id}`} target="_blank" rel="noreferrer"><Button>Download</Button></a></div>
         </>:""}
+        <div className="embed"><h3>{`</>Embed Code </>`}</h3><div><h4>{`https://filemoon.in/e/${Id}`}</h4><CopyToClipboard text={`https://filemoon.in/e/${Id}`} onCopy={oncopy}><FaLink style={{fontSize:"25px",color:"black",borderRadius:"5px",padding:"5px",margin:"0px 0px 0px 20px",cursor:"pointer"}}/></CopyToClipboard></div></div>
         <div className="share">
             <img src={Image.split("---").join("/")} className="oneimage" alt=""/>
             <Text style={{color:"white",fontWeight:"bolder",fontSize:"20px"}}>Share us on </Text>
@@ -139,25 +158,7 @@ export default function Player(){
             <a href={`mailto:?subject=${Title.split("_").join(" ")}&body=${shareUrl}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <EmailIcon size={32} borderRadius={10} />
             </a>
-            <CopyToClipboard text={shareUrl}
-            onCopy={() =>{
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'bottom-end',
-                    showConfirmButton: false,
-                    timer: 5000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                      toast.addEventListener('mouseenter', Swal.stopTimer)
-                      toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                  })
-                  
-                  Toast.fire({
-                    icon: 'success',
-                    title: 'Link successfully Copeid ...'
-                  })
-            }}>
+            <CopyToClipboard text={shareUrl} onCopy={oncopy}>
             <FaLink style={{backgroundColor:"red",fontSize:"32px",color:"white",borderRadius:"5px",padding:"5px",margin:"0px 0px 0px 20px",cursor:"pointer"}}/>
             </CopyToClipboard>
             </div>

@@ -31,6 +31,24 @@
 .share{
     padding: 30px 0px 30px 30px;
 }
+.embed{
+    width:400px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+.embed >h3{
+    font-weight: bolder;
+    padding-bottom: 10px;
+}
+.embed > div {
+    display: flex;
+    justify-content: space-between;
+}
+.embed >div > h4{
+  font-weight: bolder;
+}
 @media screen and (min-width:0px) and (max-width:1000px) {
     #div1{
         width: 100%;
