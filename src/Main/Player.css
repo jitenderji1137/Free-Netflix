@@ -75,9 +75,12 @@
     .embed{
         margin-left: 0px;
     }
-}
-@media screen and (min-width:0px) and (max-width:550px) {
     .oneimage{
         max-width:200px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:399px) {
+    .embed{
+        width:100%;
     }
 }
