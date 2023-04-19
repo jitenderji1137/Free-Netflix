@@ -48,6 +48,7 @@
 }
 .embed >div > h4{
   font-weight: bolder;
+  color: rgb(0, 0, 0);
 }
 @media screen and (min-width:0px) and (max-width:1000px) {
     #div1{
@@ -82,5 +83,12 @@
 @media screen and (min-width:0px) and (max-width:399px) {
     .embed{
         width:100%;
+        margin-top:20px;
+        background-color: rgba(255, 255, 255, 0.082);
+        color: white;
     }
+    .embed >div > h4{
+        font-weight: bolder;
+        color: rgb(255, 255, 255);
+      }
 }
