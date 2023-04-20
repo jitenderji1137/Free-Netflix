@@ -8,6 +8,7 @@ import "./Allinone.css"
 import { FaLink } from "react-icons/fa";
 import Swal from 'sweetalert2'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { SuperSEO } from "react-super-seo";
 import { PinterestIcon,EmailIcon,WhatsappIcon,FacebookIcon,TelegramIcon,TwitterIcon} from "react-share";
 export default function Player(){
     const { Title , Geans , Plateform , Id , page,Image } = useParams();
@@ -47,6 +48,34 @@ export default function Player(){
     }
     return(
         <>
+        <SuperSEO
+        title={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free online or Download`}
+        description={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`}
+        lang="en"
+        openGraph={{
+            ogImage: {
+            ogImage: `${Image.split("---").join("/")}`,
+            ogImageAlt: `${Title.split("_").join(" ")}`,
+            ogImageWidth: 1200,
+            ogImageHeight: 630,
+            ogImageType: "image/jpeg",
+            },
+        }}
+        twitter={{
+            twitterSummaryCard: {
+            summaryCardImage: `${Image.split("---").join("/")}`,
+            summaryCardImageAlt: `${Title.split("_").join(" ")}`,
+            summaryCardSiteUsername: "vijayji1137",
+            },
+        }}
+        />
+        <SuperSEO
+        title={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free online or Download`}
+        description={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`}
+        >
+        <meta name="custom-meta" content="my-value" />
+        <meta property="custom-meta-2" content="my-other-value" />
+        </SuperSEO>
         <Helmet>
         <title>{`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free online or Download`}</title>
         <meta name="description" content={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`} />
