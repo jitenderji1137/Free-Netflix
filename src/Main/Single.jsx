@@ -40,7 +40,7 @@ export default function Single({Geans,Title}){
             {data.length ===0?
             arr.map((Item)=>{
               return(
-                <Image src="https://i.postimg.cc/Cxr8bfBf/Untitled-design.png" className="row_poster" key={Item}/>
+                <Image src="https://i.postimg.cc/qBDhGN1k/Untitled-design-1-1.png" className="row_poster" key={Item}/>
               )
             })
             :

@@ -32,7 +32,7 @@ export default function Allinone(){
         {data.length===0?arr.map((I,Index)=>{
             return(
                 <>
-                <img src="https://i.postimg.cc/Cxr8bfBf/Untitled-design.png" className="images" alt="" key={Index}/>
+                <img src="https://i.postimg.cc/qBDhGN1k/Untitled-design-1-1.png" className="images" alt="" key={Index}/>
                 </>
             );
         }):""}
