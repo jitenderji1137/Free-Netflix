@@ -32,7 +32,7 @@ export default function Search(){
         {data.length===0?arr.map((I,Index)=>{
             return(
                 <>
-                <img src="https://i.postimg.cc/qBDhGN1k/Untitled-design-1-1.png" className="images" alt="" key={Index}/>
+                <img src={process.env.REACT_APP_GRAY_COLOR} className="images" alt="" key={Index}/>
                 </>
             );
         }):""}
