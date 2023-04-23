@@ -21,6 +21,7 @@ header{
     align-items: center;
     padding: 20px 50px;
     z-index: 10000;
+    backdrop-filter: blur(15px);
 }
 .navigaition{
     display: flex;
