@@ -43,11 +43,9 @@ export default function MainBody({Cate,value}){
               </div>
            </div>
         </div>
-        <div className="Mycarts" style={{position:"relative",backdropFilter:"blur(20px"}}>
+        <div className="Mycarts" style={{position:"relative"}}>
         {Cate.map((Item,index)=>{
-            return(
-              <Single Geans={Item.Geans} Title={Item.Title} key={index} />
-            )
+            return <Single Geans={Item.Geans} Title={Item.Title} key={index} />
         })}
         </div>
         </>

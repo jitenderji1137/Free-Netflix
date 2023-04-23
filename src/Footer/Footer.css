@@ -6,8 +6,6 @@
     position: absolute;
     width: 100vw;
     background-color: rgba(0,0,0,0.747);
-    background-size: cover;
-    background-blend-mode: multiply;
     color: white;
     padding: 30px 80px 30px 30px;
 }
@@ -15,9 +13,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     flex: 1;
-}
-.wa-chat-box-poweredby{
-    display: none !important;;
 }
 .flex{
     display: flex;
@@ -78,15 +73,9 @@ footer .by p{
     color: white;
     border-radius: 50%;
     outline: 2px solid white;
-    transition-property:outline-offset, outline-color,background-color;
-    transition-duration: .25s;
 }
 .icon1:hover{
-    outline-offset: 4ppx;
-}
-.icon1:hover i{
-    animation: shake .25s;
-    -webkit-animation: shake .25s;
+    outline-offset: 4px;
 }
 .icon--instagram:hover{
     background-color:rgb(255, 71, 102);
@@ -103,18 +92,6 @@ footer .by p{
 .icon--github:hover{
     background-color: #000;
     outline-color: #ffffff;
-}
-@keyframes shake{
-    10%{
-        transform: rotate(15deg);
-    }
-    20%{
-        transform: rotate(-15deg);
-}  30%{
-        transform: rotate(15deg);
-    }  40%{
-        transform: rotate(-15deg);
-}
 }
 @media only screen and (max-width:800px){
     .hero{
@@ -141,9 +118,6 @@ footer .by p{
 @media only screen and (max-width:650px){
     .hero{
         display: none;
-    }
-    #wa-widget-send-button{
-        display: none!important;
     }
     .tab-bar{
         position: fixed;

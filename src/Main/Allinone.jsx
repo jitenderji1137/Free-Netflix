@@ -30,19 +30,11 @@ export default function Allinone(){
         <h1 id="heading">{text}</h1>
         <div className="JustforGrid">
         {data.length===0?arr.map((I,Index)=>{
-            return(
-                <>
-                <img src={process.env.REACT_APP_GRAY_COLOR} className="images" alt="" key={Index}/>
-                </>
-            );
+                return <img src={process.env.REACT_APP_GRAY_COLOR} className="images" alt="" key={Index}/>;
         }):""}
         {
             data.map((Item,Index)=>{
-                return(
-                    <>
-                <img src={Item.Image} className="images" title={Item.Title} alt="" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.MainCategory}/${Item.Plateform}/${Item.FileID}/1/${Item.Image.split("/").join("---")}`)}} key={Index}/>
-                    </>
-                )
+                return <img src={Item.Image} className="images" title={Item.Title} alt={Item.Title} onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.MainCategory}/${Item.Plateform}/${Item.FileID}/1/${Item.Image.split("/").join("---")}`)}} key={Index}/>
             })
         }
         </div>

@@ -13,8 +13,8 @@
     cursor: pointer;
 }
 .row_poster:hover{
-    transform: scale(1.5);
-    position: relative;;
+    transform: scale(1.2);
+    position: relative;
     z-index: 9999;
 }
 .row_posters{
@@ -29,8 +29,7 @@
 .row{
     color: white;
     padding: 0px 20px;
-    backdrop-filter: blur(20px);
-    background-color: #000000ab;
+    background-color: rgba(0,0,0,0.747);
 }
 .TitleDiv{
     font-size: 30px;

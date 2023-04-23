@@ -24,12 +24,12 @@ export default function Footer(){
                     <li><Link to="/">Home</Link></li>
                 </ul>
                 <ul>
+                    <li><Link to="/search/1/movies">Search</Link></li>
+                </ul>
+                <ul>
                     <li><Link to="/movies">Movies</Link></li>
                 </ul><ul>
                     <li><Link to="/webseries">Web Series</Link></li>
-                </ul>
-                <ul>
-                    <li><Link to="/search/1/movies">Search</Link></li>
                 </ul>
                 <ul>
                     <li><Link to="/adult">Adult 18+</Link></li>
@@ -56,7 +56,7 @@ export default function Footer(){
           </div>
           <div className="line_separete">
             <div className="by flex">
-                <p style={{display:"flex"}}>Cpoyright <BsCCircle style={{margin:"5px 10px"}}/> {new Date().getFullYear()} All Rights are Reserved by <Link to="https://www.instagram.com/vijayji1137/" style={{marginLeft:"10px"}}>VIJAYJI1137</Link></p>
+                <p style={{display:"flex"}}>Cpoyright <BsCCircle style={{margin:"5px 10px"}}/>2023 - {new Date().getFullYear()} All Rights are Reserved by <Link to="https://www.instagram.com/vijayji1137/" style={{marginLeft:"10px"}}>VIJAYJI1137</Link></p>
                 <div className="icons">
                     <a href="https://www.instagram.com/vijayji1137/" className="icon1 icon--instagram">
                         <i><AiOutlineInstagram/></i>
