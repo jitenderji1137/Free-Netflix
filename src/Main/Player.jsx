@@ -163,8 +163,8 @@ export default function Player(){
         <h1 id="title">{Title.split("_").join(" ")}</h1>
         <div id="downloads">
         <a href={`https://filemoon.sx/download/${Id}`} target="_blank" rel="noreferrer"><Button>Download</Button></a></div>
-        </>:""}
         <div className="embed"><h3>{`</> Embed Link </>`}</h3><div><h4>{`https://filemoon.in/e/${Id}`}</h4><CopyToClipboard text={`https://filemoon.in/e/${Id}`} onCopy={oncopy}><FaLink style={{fontSize:"25px",borderRadius:"5px",padding:"5px",margin:"0px 0px 0px 20px",cursor:"pointer"}}/></CopyToClipboard></div></div>
+        </>:""}
         <div className="share">
             <img src={Image.split("---").join("/")} className="oneimage" alt=""/>
             <Text style={{color:"white",fontWeight:"bolder",fontSize:"20px"}}>Share us on </Text>
@@ -196,19 +196,11 @@ export default function Player(){
         <h1 id="heading">All {Geans}</h1>
         <div className="JustforGrid">
         {data.length===0?arr.map((I,Index)=>{
-            return(
-                <>
-                <img src="https://i.postimg.cc/Cxr8bfBf/Untitled-design.png" className="images" alt="" key={Index}/>
-                </>
-            );
+            return <img src="https://i.postimg.cc/Cxr8bfBf/Untitled-design.png" className="images" alt="" key={Index}/>
         }):""}
         {
             data.map((Item,Index)=>{
-                return(
-                    <>
-                <img src={Item.Image} className="images" title={Item.Title} alt="" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.MainCategory}/${Item.Plateform}/${Item.FileID}/1/${Item.Image.split("/").join("---")}`)}} key={Index}/>
-                    </>
-                )
+                return <img src={Item.Image} className="images" title={Item.Title} alt="" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.MainCategory}/${Item.Plateform}/${Item.FileID}/1/${Item.Image.split("/").join("---")}`)}} key={Index}/>
             })
         }
         </div>
