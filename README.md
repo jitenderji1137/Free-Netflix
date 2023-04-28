@@ -1,21 +1,20 @@
 Copy Link and Open in Chrome
 Website Link :- https://free-netflix.pages.dev/
-<div id="my-link">
-  My GitHub profile: https://github.com/my-username
-</div>
 
 
-<script>
-function copyLink() {
-  var copyText = document.getElementById("my-link");
-  var input = document.createElement("input");
-  input.setAttribute("value", copyText.textContent);
-  document.body.appendChild(input);
-  input.select();
-  document.execCommand("copy");
-  document.body.removeChild(input);
-}
-</script>
+#  Free NetFlix Watch All Movies Webseries For Free
 
+Copy Free Netflix Url and open in Chrome other Browsers are not Supported 
 
-<button onclick="copyLink()">Copy Free - NetFlix Link</button>
+## Copy Free-Netflix URL
+
+```
+https://free-netflix.pages.dev/
+```
+# [Follow US][https://github.com/jitenderji1137]
+## Browser support
+
+- Chrome
+- Firefox
+- Safari
+- Microsoft Edge
