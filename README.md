@@ -14,6 +14,5 @@ https://free-netflix.pages.dev/
 ## Browser support
 [Follow US]:https://github.com/jitenderji1137
 - Chrome
-- Firefox
 - Safari
 - Microsoft Edge
