@@ -169,25 +169,25 @@ export default function Player(){
             <img src={Image.split("---").join("/")} className="oneimage" alt=""/>
             <Text style={{color:"white",fontWeight:"bolder",fontSize:"20px"}}>Share us on </Text>
             <div style={{display:"flex"}}>
-            <a href={`https://www.facebook.com/sharer.php?u=${shareUrl}`} target="_blank" rel="noreferrer">
+            <a href={`https://www.facebook.com/sharer.php?u=https://github.com/jitenderji1137/Free-Netflix`} target="_blank" rel="noreferrer">
                 <FacebookIcon size={32} borderRadius={10} />
             </a>
-            <a href={`https://t.me/share/url?url=${shareUrl}&text=${Title.split("_").join(" ")}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
+            <a href={`https://t.me/share/url?url=https://github.com/jitenderji1137/Free-Netflix&text=${Title.split("_").join(" ")}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <TelegramIcon size={32} borderRadius={10} />
             </a>
-            <a href={`https://twitter.com/intent/tweet?text=${Title.split("_").join(" ")}&url=${shareUrl}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
+            <a href={`https://twitter.com/intent/tweet?text=${Title.split("_").join(" ")}&url=https://github.com/jitenderji1137/Free-Netflix`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <TwitterIcon size={32} borderRadius={10} />
             </a>
-            <a href={`https://api.whatsapp.com/send?text=[${Title.split("_").join(" ")}] [Watch Now For Free or Download in HD] [${shareUrl}]`} borderRadius={10} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
+            <a href={`https://api.whatsapp.com/send?text=[${Title.split("_").join(" ")}] [Watch Now For Free or Download in HD] [https://github.com/jitenderji1137/Free-Netflix]`} borderRadius={10} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <WhatsappIcon size={32} borderRadius={10} />
             </a>
-            <a href={`http://pinterest.com/pin/create/button/?url=${shareUrl}&media=${Image.split("---").join("/")}&description=${Title.split("_").join(" ")} ||  Watch Free online or Download`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
+            <a href={`http://pinterest.com/pin/create/button/?url=https://github.com/jitenderji1137/Free-Netflix&media=${Image.split("---").join("/")}&description=${Title.split("_").join(" ")} ||  Watch Free online or Download`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <PinterestIcon size={32} borderRadius={10} />
             </a>
-            <a href={`mailto:?subject=${Title.split("_").join(" ")}&body=${shareUrl}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
+            <a href={`mailto:?subject=${Title.split("_").join(" ")}&body=https://github.com/jitenderji1137/Free-Netflix`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <EmailIcon size={32} borderRadius={10} />
             </a>
-            <CopyToClipboard text={shareUrl} onCopy={oncopy}>
+            <CopyToClipboard text="https://github.com/jitenderji1137/Free-Netflix" onCopy={oncopy}>
             <FaLink style={{backgroundColor:"red",fontSize:"32px",color:"white",borderRadius:"5px",padding:"5px",margin:"0px 0px 0px 20px",cursor:"pointer"}}/>
             </CopyToClipboard>
             </div>
