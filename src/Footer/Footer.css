@@ -5,9 +5,10 @@
     height: auto;
     position: absolute;
     width: 100vw;
-    background-color: rgba(0,0,0,0.747);
+    background-color: #000000ed;
     color: white;
     padding: 30px 80px 30px 30px;
+    box-shadow: rgb(0 0 0) 0px -10px 50px 30px;
 }
 .hero .container{
     justify-content: space-between;
