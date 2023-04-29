@@ -6,10 +6,12 @@ import { ArrowLeftIcon , ArrowRightIcon } from "@chakra-ui/icons"
 import { Link , useNavigate } from "react-router-dom";
 export default function Single({Geans,Title}){
   const navigate = useNavigate();
-   const [data,datavalue] = useState(JSON.parse(localStorage.getItem(Geans))||[]);
+   const [data,datavalue] = useState([]);
    const containerRef = useRef(null);
    const arr = [1,2,3,4,5];
    useEffect(()=>{
+    datavalue([]);
+    datavalue(JSON.parse(localStorage.getItem(Geans))||[]);
      axios.get(`${process.env.REACT_APP_Free_NetFlix}?${Geans}`)
      .then((res)=>{
         datavalue(res.data);
