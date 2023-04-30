@@ -175,7 +175,7 @@ export default function Player(){
             <a href={`https://t.me/share/url?url=https://github.com/jitenderji1137/Free-Netflix&text=${Title.split("_").join(" ")}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <TelegramIcon size={32} borderRadius={10} />
             </a>
-            <a href={`https://twitter.com/intent/tweet?text=${Title.split("_").join(" ")}&url=https://github.com/jitenderji1137/Free-Netflix`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
+            <a href={`https://twitter.com/intent/tweet?text=Watch ${Title.split("_").join(" ")} For Free Copy link from and open in new tab&url=https://github.com/jitenderji1137/Free-Netflix`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <TwitterIcon size={32} borderRadius={10} />
             </a>
             <a href={`https://api.whatsapp.com/send?text=[${Title.split("_").join(" ")}] [Watch Now For Free or Download in HD] [https://github.com/jitenderji1137/Free-Netflix]`} borderRadius={10} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
