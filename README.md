@@ -19,7 +19,7 @@ https://free-netflix.pages.dev/
 
 ## Demo Video
 <div align="center">
-<img src="https://user-images.githubusercontent.com/113350806/235673608-e42280e8-6645-4b54-a686-f95d238f261f.png" alt="logo" width="400" height="auto" />
+<img src="https://user-images.githubusercontent.com/113350806/235673608-e42280e8-6645-4b54-a686-f95d238f261f.png" alt="logo" width="100%" height="auto" />
 </div>
 
 
