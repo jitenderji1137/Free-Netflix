@@ -34,7 +34,11 @@ https://free-netflix.pages.dev/
 
 
 # [Follow US][Follow US]
+
+##[Search on Google][GoogleURL]
+
 ## Browser support
+[GoogleURL]:https://www.google.com/search?q=jitenderji1137%2FFree-Netflix+on+github&oq=jitenderji1137%2FFree-Netflix+on+github
 [Follow US]:https://github.com/jitenderji1137
 - Chrome
 - Safari
