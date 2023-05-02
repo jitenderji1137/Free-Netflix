@@ -13,7 +13,8 @@ https://free-netflix.pages.dev/
 
 
 ## Demo Video
-![Demo](./src/Free%20Netflix%20Demo.mp4)
+
+https://user-images.githubusercontent.com/113350806/235672382-2c2c21cc-0b35-460a-93ff-b48a6e2bd3ed.mp4
 <br />
 <br />
 
