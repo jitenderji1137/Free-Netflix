@@ -13,7 +13,7 @@ https://free-netflix.pages.dev/
 
 
 ## Demo Video
-![Demo](./src/Free Netflix Demo.mp4)
+![Demo](./src/Free%20Netflix%20Demo.mp4)
 <br />
 <br />
 
