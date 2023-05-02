@@ -18,10 +18,9 @@ https://free-netflix.pages.dev/
 
 
 ## Demo Video
-
-[Watch Free Netflix Demo](https://user-images.githubusercontent.com/113350806/235673608-e42280e8-6645-4b54-a686-f95d238f261f.png)
-<br />
-<br />
+<div align="center">
+<img src="https://user-images.githubusercontent.com/113350806/235673608-e42280e8-6645-4b54-a686-f95d238f261f.png" alt="logo" width="400" height="auto" />
+</div>
 
 
 # [Follow US][Follow US]
