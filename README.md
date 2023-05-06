@@ -17,7 +17,7 @@ https://free-netflix.pages.dev/
 ```
 ## Preview 
 
-https://filemoon.in/e/elszt278tu2i
+https://youtu.be/SLqpO4m57io
 
 
 
