@@ -15,6 +15,10 @@ Copy Free Netflix Url and open in Chrome other Browsers are not Supported
 ```
 https://free-netflix.pages.dev/
 ```
+## Preview 
+
+
+https://user-images.githubusercontent.com/113350806/236646768-4af44391-7397-457d-9e82-dbfb7c94816d.mp4
 
 
 ## Demo Screenshots
