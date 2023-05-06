@@ -17,7 +17,7 @@ https://free-netflix.pages.dev/
 ```
 ## Preview 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SLqpO4m57io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://drive.google.com/file/d/1kWFKC6RXrpGXBcyEMF1X2TXfxq4M1Qb2/view?usp=share_link
 
 
 
