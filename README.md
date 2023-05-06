@@ -3,7 +3,6 @@
 </div>
 
 
-Copy Link and Open in Chrome
 
 
 #  Free NetFlix Watch All Movies Webseries For Free
