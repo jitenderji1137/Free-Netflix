@@ -17,8 +17,8 @@ https://free-netflix.pages.dev/
 ```
 ## Preview 
 
+https://filemoon.in/e/elszt278tu2i
 
-https://user-images.githubusercontent.com/113350806/236646768-4af44391-7397-457d-9e82-dbfb7c94816d.mp4
 
 
 ## Demo Screenshots
