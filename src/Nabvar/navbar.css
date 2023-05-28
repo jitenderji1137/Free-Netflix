@@ -125,6 +125,12 @@ padding-left: 0;
     background-color: #000000ed;
     box-shadow: rgb(0 0 0) 0px -10px 50px 30px;
 }
+.usericon{
+    position: absolute;
+    font-size: 40px;
+    right: 0;
+    cursor: pointer;
+}
 @media screen and (min-width:0px) and (max-width:1100px) {
     header{
         padding: 5px 20px;

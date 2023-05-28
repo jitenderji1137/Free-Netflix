@@ -4,8 +4,13 @@ import { useEffect } from "react";
 import "./navbar.css"
 import WebFont from 'webfontloader';
 import Swal from 'sweetalert2'
+import { BiUserCircle } from 'react-icons/bi';
+import { auth } from "../Main/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 export default function Navbar(){
     const navigate = useNavigate();
+    const [user] = useAuthState(auth);
     useEffect(() => {
         WebFont.load({
           google: {
@@ -42,6 +47,7 @@ export default function Navbar(){
             <form className="search" onSubmit={HandelSubmit}>
              <input type="text" id="SearchText" placeholder="Search..."/>
             </form>
+            {user ?<BiUserCircle onClick={()=>{auth.signOut()}} className="usericon" color="red"/>:<BiUserCircle onClick={()=>{signInWithRedirect(auth, new GoogleAuthProvider())}} className="usericon" color="white"/>}
         </header>
         </>
     )
