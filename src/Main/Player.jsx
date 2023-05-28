@@ -20,7 +20,7 @@ export default function Player(){
     const navigate = useNavigate();
     const [Page,pagevalue] = useState(page);
     const shareUrl = window.location.href;
-    const [user] = useAuthState(auth);
+    let user = useAuthState(auth);
     useEffect(()=>{
         datavalue([]);
         window.scrollTo(0,0);
@@ -28,10 +28,10 @@ export default function Player(){
      .then((res)=>{
         datavalue(res.data);
      })
-    },[Page,Geans,Id])
+    },[Page,Geans,Id,user])
     useEffect(() => {
         window.scrollTo(0,0);
-    }, [Title,Plateform,Id]);
+    }, [Title,Plateform,Id,user]);
     const oncopy = ()=>{
         const Toast = Swal.mixin({
             toast: true,
