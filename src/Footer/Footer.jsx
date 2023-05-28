@@ -36,7 +36,7 @@ export default function Footer(){
         return () => {
           unsubscribe();
         };
-      }, []);
+      }, [user]);
       function navlogout() {
         Swal.fire({
           title: 'Are you sure?',
@@ -141,11 +141,11 @@ export default function Footer(){
             <span>Adult</span>    
             </button></Link>
             {user ?
-            <div onClick={navlogout()} target="_blank" rel="noreferrer"><button className="tab-item">
+            <div onClick={()=>{navlogout()}}><button className="tab-item">
             <BsFillPersonFill/>
             <span>Logout</span>    
             </button></div>:
-            <div onClick={firebase.auth().signInWithPopup(provider)} target="_blank" rel="noreferrer"><button className="tab-item">
+            <div onClick={()=>{firebase.auth().signInWithRedirect(provider)}}><button className="tab-item">
             <BsFillPersonFill/>
             <span>Login</span>    
             </button></div>

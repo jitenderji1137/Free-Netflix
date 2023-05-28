@@ -86,7 +86,7 @@ export default function Navbar(){
             <form className="search" onSubmit={HandelSubmit}>
              <input type="text" id="SearchText" placeholder="Search..."/>
             </form>
-            {user ?<BiUserCircle onClick={()=>{navlogout()}} className="usericon" color="red"/>:<BiUserCircle onClick={()=>{firebase.auth().signInWithPopup(provider)}} className="usericon" color="#9b6262"/>}
+            {user ?<BiUserCircle onClick={()=>{navlogout()}} className="usericon" color="red"/>:<BiUserCircle onClick={()=>{firebase.auth().signInWithRedirect(provider)}} className="usericon" color="#9b6262"/>}
         </header>
         </>
     )
