@@ -139,6 +139,7 @@ padding-left: 0;
     }
     .search input{
         padding: 0px;
+        left: -50px;
     }
 }
 @media screen and (min-width:0px) and (max-width:900px) {
@@ -147,6 +148,9 @@ padding-left: 0;
 }
 .search{
     width: 200px;
+}
+.search input{
+    left: -40px;
 }
 }
 @media screen and (min-width:0px) and (max-width:650px) {
@@ -165,6 +169,12 @@ padding-left: 0;
     }
     .Mycarts{
         margin-top: -60px;
+    }
+    .usericon{
+        display: none;
+    }
+    .search input{
+        left: 0;
     }
 }
 @media screen and (min-width:0px) and (max-width:500px) {
