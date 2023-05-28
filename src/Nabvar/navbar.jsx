@@ -1,16 +1,39 @@
 import { Heading } from "@chakra-ui/react";
 import { useNavigate , Link } from "react-router-dom"
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import "./navbar.css"
 import WebFont from 'webfontloader';
 import Swal from 'sweetalert2'
 import { BiUserCircle } from 'react-icons/bi';
-import { auth } from "../Main/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 export default function Navbar(){
     const navigate = useNavigate();
-    const [user] = useAuthState(auth);
+    const [user, setIsAuthenticated] = useState(false);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const firebaseConfig = {
+        apiKey: "AIzaSyBOwu1HGOc2LTTjalwwhwEkM16EdziUyEE",
+        authDomain: "free-netflix-7e3cf.firebaseapp.com",
+        projectId: "free-netflix-7e3cf"
+    };
+    firebase.initializeApp(firebaseConfig);
+    useEffect(() => {
+        // Add an authentication state observer
+        const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+          if (user) {
+            // User is signed in
+            setIsAuthenticated(true);
+          } else {
+            // User is signed out
+            setIsAuthenticated(false);
+          }
+        });
+    
+        // Clean up the observer when component unmounts
+        return () => {
+          unsubscribe();
+        };
+      }, []);
     useEffect(() => {
         WebFont.load({
           google: {
@@ -34,6 +57,22 @@ export default function Navbar(){
         navigate(`/search/1/${e.target.SearchText.value}`)
     }
     }
+    function navlogout() {
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "Do you want to logout...",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Logout'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                firebase.auth().signOut();
+                navigate(`/`);
+            }
+          })
+    }
     return(
         <>
         <header>
@@ -47,7 +86,7 @@ export default function Navbar(){
             <form className="search" onSubmit={HandelSubmit}>
              <input type="text" id="SearchText" placeholder="Search..."/>
             </form>
-            {user ?<BiUserCircle onClick={()=>{auth.signOut()}} className="usericon" color="red"/>:<BiUserCircle onClick={()=>{signInWithRedirect(auth, new GoogleAuthProvider())}} className="usericon" color="white"/>}
+            {user ?<BiUserCircle onClick={()=>{navlogout()}} className="usericon" color="red"/>:<BiUserCircle onClick={()=>{firebase.auth().signInWithPopup(provider)}} className="usericon" color="#9b6262"/>}
         </header>
         </>
     )

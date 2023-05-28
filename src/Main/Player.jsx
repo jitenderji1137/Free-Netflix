@@ -10,9 +10,8 @@ import Swal from 'sweetalert2'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { SuperSEO } from "react-super-seo";
 import { PinterestIcon,EmailIcon,WhatsappIcon,FacebookIcon,TelegramIcon,TwitterIcon} from "react-share";
-import { auth } from "./firebase"
-import { useAuthState } from "react-firebase-hooks/auth";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 export default function Player(){
     const { Title , Geans , Plateform , Id , page,Image } = useParams();
     const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
@@ -20,7 +19,30 @@ export default function Player(){
     const navigate = useNavigate();
     const [Page,pagevalue] = useState(page);
     const shareUrl = window.location.href;
-    let user = useAuthState(auth);
+    const [user, setIsAuthenticated] = useState(true);
+    const firebaseConfig = {
+        apiKey: "AIzaSyBOwu1HGOc2LTTjalwwhwEkM16EdziUyEE",
+        authDomain: "free-netflix-7e3cf.firebaseapp.com",
+        projectId: "free-netflix-7e3cf"
+    };
+    firebase.initializeApp(firebaseConfig);
+    useEffect(() => {
+        // Add an authentication state observer
+        const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+          if (user) {
+            // User is signed in
+            setIsAuthenticated(true);
+          } else {
+            // User is signed out
+            setIsAuthenticated(false);
+          }
+        });
+    
+        // Clean up the observer when component unmounts
+        return () => {
+          unsubscribe();
+        };
+      }, [user]);
     useEffect(()=>{
         datavalue([]);
         window.scrollTo(0,0);
@@ -50,9 +72,27 @@ export default function Player(){
             title: 'Link successfully Copeid ...'
           })
     }
+    function alertforlogin() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          });
+          Toast.fire({
+            icon: 'question',
+            title: 'Please Login First to Watch'
+          });
+          navigate('/');
+    };
     return(
         <>
-        {user ? <>
+        {user ?<>
         <SuperSEO
         title={`Free Netflix - ${Title.split("_").join(" ")} ||  Watch Free online or Download`}
         description={`Watch - ${Title.split("_").join(" ")} for free or Download in Full HD`}
@@ -215,7 +255,7 @@ export default function Player(){
                 <Button isDisabled={true}>{Page}</Button>
                 <Button onClick={()=>{pagevalue(+Page+1)}}>Next...</Button>
             </div>
-        </Center> </>:<>{signInWithRedirect(auth, new GoogleAuthProvider())}</>}
+        </Center></>:<>{alertforlogin()}</>}
         </>
     ) 
 }
