@@ -28,10 +28,10 @@ export default function Player(){
      .then((res)=>{
         datavalue(res.data);
      })
-    },[Page,Geans,Id,user])
+    },[Page,Geans,Id])
     useEffect(() => {
         window.scrollTo(0,0);
-    }, [Title,Plateform,Id,user]);
+    }, [Title,Plateform,Id]);
     const oncopy = ()=>{
         const Toast = Swal.mixin({
             toast: true,
