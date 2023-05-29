@@ -13,6 +13,7 @@
     background-color: #000000f2;
     border-radius: 10px;
     border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .cancelicon{
     color: white;
@@ -27,6 +28,9 @@
     font-weight: bolder;
     text-align: center;
     color: white;
+}
+.h1text span{
+    color: red;
 }
 .logicon{
     display: flex;
@@ -70,4 +74,21 @@ label{
     margin-top: 10px;
     font-size: 10px;
     cursor: pointer;
+}
+@media screen and (min-width:0px) and (max-width:650px) {
+    .loginpop{
+        top: 0;
+    }
+}
+@media screen and (min-width:0px) and (max-width:400px) {
+    .input{
+        margin: 0 3% 10% 3%;
+        width: 94%!important;
+    }
+    label{
+        margin: 3%;
+    }
+    .h1text{
+        font-size: 20px;
+    }
 }

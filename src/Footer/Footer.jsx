@@ -10,9 +10,11 @@ import { AiOutlineLinkedin,AiOutlineInstagram,AiOutlineGithub } from "react-icon
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import Swal from 'sweetalert2'
+import Login from "../Main/login";
 export default function Footer(){
     const navigate = useNavigate();
     const [user, setIsAuthenticated] = useState(false);
+    const [loginpop,setloginpop] = useState(false);
     const provider = new firebase.auth.GoogleAuthProvider();
     const firebaseConfig = {
         apiKey: "AIzaSyBOwu1HGOc2LTTjalwwhwEkM16EdziUyEE",
@@ -36,7 +38,7 @@ export default function Footer(){
         return () => {
           unsubscribe();
         };
-      }, [user]);
+      }, []);
       function navlogout() {
         Swal.fire({
           title: 'Are you sure?',
@@ -52,6 +54,14 @@ export default function Footer(){
               navigate(`/`);
           }
         })
+  }
+  function loginpophandel(){
+    if(loginpop){
+      setloginpop(false);
+    }
+    else{
+      setloginpop(true);
+    }
   }
     return(
         <>
@@ -143,14 +153,15 @@ export default function Footer(){
             {user ?
             <div onClick={()=>{navlogout()}}><button className="tab-item">
             <BsFillPersonFill/>
-            <span>Logout</span>    
+            <span>User</span>    
             </button></div>:
-            <div onClick={()=>{firebase.auth().signInWithRedirect(provider)}}><button className="tab-item">
+            <div onClick={()=>{loginpophandel()}}><button className="tab-item">
             <BsFillPersonFill/>
-            <span>Login</span>    
+            <span>User</span>    
             </button></div>
             }
         </div>
+        {loginpop ?<Login setloginpop={loginpophandel}/>:<></>}
         </>
     )
 }

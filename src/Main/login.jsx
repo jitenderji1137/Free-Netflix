@@ -8,6 +8,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import Swal from 'sweetalert2'
 function Login({setloginpop}) {
+    console.log("calling loginpophandel");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [continueyes, setContinueyes] = useState(true);
@@ -67,7 +68,7 @@ function Login({setloginpop}) {
     <div className="loginpop">
         <div className="loginpopdiv">
             <GiCancel className='cancelicon' onClick={()=>{setloginpop()}} />
-            <h1 className='h1text'>Continue Free-Netflix With...</h1>
+            <h1 className='h1text'>Continue <span>Free-Netflix</span> With</h1>
             <div className='logicon'>
                 <div className='ggicon' onClick={()=>{loginwithfirebase()}}><FcGoogle/></div>
                 <div className='ggicon' onClick={()=>{loginwithgithub()}}><BsGithub/></div>
@@ -94,7 +95,7 @@ function Login({setloginpop}) {
                     <Input className='input' type='password' value={password} placeholder='Enter Your Password ...' onChange={(e)=>{setPassword(e.target.value)}} isRequired/>
                 </div>
                 <div className='subbut'>
-                    <Button type='submit' colorScheme='red' variant='outline'>Create</Button>
+                    <Button type='submit' colorScheme='red' variant='outline'>Create Account</Button>
                 </div>
             </form>
             <h1 className='createacc' onClick={()=>{setEmail("");setPassword("");setContinueyes(true)}}>Login With Email...</h1>
