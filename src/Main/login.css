@@ -64,3 +64,10 @@ label{
 .subbut button{
     width: 130px;
 }
+.createacc{
+    color: #006eff;
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: 10px;
+    cursor: pointer;
+}
