@@ -7,10 +7,11 @@ import Swal from 'sweetalert2'
 import { BiUserCircle } from 'react-icons/bi';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import Login from "../Main/login";
 export default function Navbar(){
     const navigate = useNavigate();
+    const [loginpop,setloginpop] = useState(false);
     const [user, setIsAuthenticated] = useState(false);
-    const provider = new firebase.auth.GoogleAuthProvider();
     const firebaseConfig = {
         apiKey: "AIzaSyBOwu1HGOc2LTTjalwwhwEkM16EdziUyEE",
         authDomain: "free-netflix-7e3cf.firebaseapp.com",
@@ -73,6 +74,14 @@ export default function Navbar(){
             }
           })
     }
+    function loginpophandel(){
+      if(loginpop){
+        setloginpop(false);
+      }
+      else{
+        setloginpop(true);
+      }
+    }
     return(
         <>
         <header>
@@ -86,8 +95,9 @@ export default function Navbar(){
             <form className="search" onSubmit={HandelSubmit}>
              <input type="text" id="SearchText" placeholder="Search..."/>
             </form>
-            {user ?<BiUserCircle onClick={()=>{navlogout()}} className="usericon" color="red"/>:<BiUserCircle onClick={()=>{firebase.auth().signInWithRedirect(provider)}} className="usericon" color="#9b6262"/>}
+            {user ?<BiUserCircle onClick={()=>{navlogout()}} className="usericon" color="red"/>:<BiUserCircle onClick={()=>{loginpophandel()}} className="usericon" color="#9b6262"/>}
         </header>
+        {loginpop ?<Login setloginpop={loginpophandel}/>:<></>}
         </>
     )
 }

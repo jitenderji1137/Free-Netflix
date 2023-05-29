@@ -72,7 +72,7 @@ export default function Player(){
             title: 'Link successfully Copeid ...'
           })
     }
-    function alertforlogin() {
+    function alertforlogin(){
         const Toast = Swal.mixin({
             toast: true,
             position: 'top',
