@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading , Image } from "@chakra-ui/react";
 import { useNavigate , Link } from "react-router-dom"
 import { useEffect,useState } from "react";
 import "./navbar.css"
@@ -12,6 +12,7 @@ export default function Navbar(){
     const navigate = useNavigate();
     const [loginpop,setloginpop] = useState(false);
     const [user, setIsAuthenticated] = useState(false);
+    const [src,setsrc] = useState("");
     const firebaseConfig = {
         apiKey: "AIzaSyBOwu1HGOc2LTTjalwwhwEkM16EdziUyEE",
         authDomain: "free-netflix-7e3cf.firebaseapp.com",
@@ -19,18 +20,19 @@ export default function Navbar(){
     };
     firebase.initializeApp(firebaseConfig);
     useEffect(() => {
-        // Add an authentication state observer
         const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
           if (user) {
-            // User is signed in
+            if(user.photoURL){
+              setsrc(user.photoURL);
+            }
+            else{
+              setsrc("https://i.postimg.cc/7LjQBGFx/icon-5404125-1280.png");
+            }
             setIsAuthenticated(true);
           } else {
-            // User is signed out
             setIsAuthenticated(false);
           }
         });
-    
-        // Clean up the observer when component unmounts
         return () => {
           unsubscribe();
         };
@@ -95,7 +97,7 @@ export default function Navbar(){
             <form className="search" onSubmit={HandelSubmit}>
              <input type="text" id="SearchText" placeholder="Search..."/>
             </form>
-            {user ?<BiUserCircle onClick={()=>{navlogout()}} className="usericon" color="red"/>:<BiUserCircle onClick={()=>{loginpophandel()}} className="usericon" color="#9b6262"/>}
+            {user ?<Image src={src} onClick={()=>{navlogout()}} id="usericon" color="red"/>:<BiUserCircle onClick={()=>{loginpophandel()}} className="usericon" color="#9b6262"/>}
         </header>
         {loginpop ?<Login setloginpop={loginpophandel}/>:<></>}
         </>

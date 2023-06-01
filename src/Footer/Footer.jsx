@@ -15,7 +15,6 @@ export default function Footer(){
     const navigate = useNavigate();
     const [user, setIsAuthenticated] = useState(false);
     const [loginpop,setloginpop] = useState(false);
-    const provider = new firebase.auth.GoogleAuthProvider();
     const firebaseConfig = {
         apiKey: "AIzaSyBOwu1HGOc2LTTjalwwhwEkM16EdziUyEE",
         authDomain: "free-netflix-7e3cf.firebaseapp.com",
