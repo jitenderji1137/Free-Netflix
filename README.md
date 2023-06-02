@@ -6,7 +6,7 @@
 
 
 #  Free NetFlix Watch All Movies Webseries For Free
-
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=jitenderji1137&label=Profile%20views&color=0e75b6&style=flat" alt="jitenderji1137" /> </p>
 Copy Free Netflix Url and open in Chrome other Browsers are not Supported 
 
 ## Copy Free-Netflix URL
