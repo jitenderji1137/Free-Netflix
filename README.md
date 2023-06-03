@@ -15,6 +15,9 @@ Copy Free Netflix Url and open in Chrome other Browsers are not Supported
 https://free-netflix.pages.dev/
 ```
 
+```
+https://free-netflix-site.netlify.app/
+```
 ## Preview 
 
 
