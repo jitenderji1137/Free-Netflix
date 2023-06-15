@@ -16,6 +16,8 @@
     color: white;
     margin-left: 30px;
     font-weight: bolder;
+    position:relative;
+    z-index:100000;
 }
 #h2>span{
     text-decoration: underline;
