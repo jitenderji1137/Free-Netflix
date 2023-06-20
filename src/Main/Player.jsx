@@ -208,7 +208,7 @@ export default function Player(){
         <h1 id="title">{Title.split("_").join(" ")}</h1>
         <div id="downloads">
         <a href={`https://filemoon.sx/download/${Id}`} target="_blank" rel="noreferrer"><Button>Download</Button></a></div>
-        <div className="embed"><h3>{`</> Embed Link </>`}</h3><div><h4>{`https://filemoon.in/e/${Id}`}</h4><CopyToClipboard text={`https://filemoon.in/e/${Id}`} onCopy={oncopy}><FaLink style={{fontSize:"25px",borderRadius:"5px",padding:"5px",margin:"0px 0px 0px 20px",cursor:"pointer"}}/></CopyToClipboard></div></div>
+        <div className="embed"><h3>{`< Embed Link />`}</h3><div><h4>{`https://filemoon.in/e/${Id}`}</h4><CopyToClipboard text={`https://filemoon.in/e/${Id}`} onCopy={oncopy}><FaLink style={{fontSize:"25px",borderRadius:"5px",padding:"5px",margin:"0px 0px 0px 20px",cursor:"pointer"}}/></CopyToClipboard></div></div>
         </>:""}
         <div className="share">
             <img src={Image.split("---").join("/")} className="oneimage" alt=""/>
