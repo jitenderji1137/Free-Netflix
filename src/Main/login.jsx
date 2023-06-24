@@ -3,6 +3,7 @@ import "./login.css"
 import { GiCancel } from 'react-icons/gi';
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
+import { AiOutlineTwitter } from 'react-icons/ai';
 import { Input , Button } from '@chakra-ui/react'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
@@ -36,7 +37,6 @@ function Login({setloginpop}) {
         });
     }
     function loginwithfirebase(){
-        console.log("Login with firebase");
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
     }
@@ -44,6 +44,10 @@ function Login({setloginpop}) {
         const provider = new firebase.auth.GithubAuthProvider();
         firebase.auth().signInWithRedirect(provider);
     }
+    const handleTwitterLogin = () => {
+        const provider = new firebase.auth.TwitterAuthProvider();
+        firebase.auth().signInWithPopup(provider);
+    };
     function loginwithemail(e){
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential) => {
@@ -72,6 +76,7 @@ function Login({setloginpop}) {
             <div className='logicon'>
                 <div className='ggicon' onClick={()=>{loginwithfirebase()}}><FcGoogle/></div>
                 <div className='ggicon' onClick={()=>{loginwithgithub()}}><BsGithub/></div>
+                <div className='ggicon' onClick={()=>{handleTwitterLogin()}}><AiOutlineTwitter style={{color:"#00b0ff"}}/></div>
             </div>
             <h2 className='h2text'>or</h2>
             {continueyes ?<>
