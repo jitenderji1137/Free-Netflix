@@ -46,7 +46,7 @@ function Login({setloginpop}) {
     }
     const handleTwitterLogin = () => {
         const provider = new firebase.auth.TwitterAuthProvider();
-        firebase.auth().signInWithPopup(provider);
+        firebase.auth().signInWithRedirect(provider);
     };
     function loginwithemail(e){
         e.preventDefault();
