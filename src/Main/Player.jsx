@@ -48,10 +48,6 @@ export default function Player(){
     useEffect(()=>{
         datavalue([]);
         window.scrollTo(0,0);
-     axios.get(`${process.env.REACT_APP_Free_NetFlix}?_page=${Page}&_limit=30&MainCategory=${Geans}`)
-     .then((res)=>{
-        datavalue(res.data);
-     })
      if(Plateform === "playeur"){
         axios.get(`https://api.playeur.com/v1/videos/${Id}`)
         .then((res)=>{
@@ -74,6 +70,12 @@ export default function Player(){
             else if(URL.video_144p_url){
                 srcvalue(URL.video_144p_url);
             }
+        })
+     }
+     else{
+        axios.get(`${process.env.REACT_APP_Free_NetFlix}?_page=${Page}&_limit=30&MainCategory=${Geans}`)
+        .then((res)=>{
+            datavalue(res.data);
         })
      }
     },[Page,Geans,Id])
