@@ -22,13 +22,13 @@
     }
 }
 @media screen and (min-width:0px) and (max-width:600px){
-    .JustforGrid{
+    .nodata{
         grid-template-columns: repeat(3,1fr);
         gap: 10px;
     }
 }
 @media screen and (min-width:0px) and (max-width:500px){
-    .JustforGrid{
+    .nodata{
         grid-template-columns: repeat(2,1fr);
         gap: 5px;
     }
@@ -37,11 +37,14 @@
     }
 }
 @media screen and (min-width:0px) and (max-width:400px){
-    .JustforGrid{
+    .nodata{
         grid-template-columns: repeat(1,1fr);
         gap: 0px;
     }
     .mdiv{
         margin: 100px 0px 0 0px;
+    }
+    .imgborder{
+        padding: 10px 0;
     }
 }

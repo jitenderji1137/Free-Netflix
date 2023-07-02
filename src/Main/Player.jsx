@@ -256,9 +256,6 @@ export default function Player(){
             <a href={`https://www.facebook.com/sharer.php?u=https://github.com/jitenderji1137/Free-Netflix`} target="_blank" rel="noreferrer">
                 <FacebookIcon size={32} borderRadius={10} />
             </a>
-            <a href={`https://t.me/share/url?url=https://github.com/jitenderji1137/Free-Netflix&text=${Title.split("_").join(" ")}`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
-                <TelegramIcon size={32} borderRadius={10} />
-            </a>
             <a href={`https://twitter.com/intent/tweet?text=Watch ${Title.split("_").join(" ")} For Free Copy link from and open in new tab&url=https://github.com/jitenderji1137/Free-Netflix`} style={{margin:"0px 0px 0px 20px"}} target="_blank" rel="noreferrer">
                 <TwitterIcon size={32} borderRadius={10} />
             </a>
