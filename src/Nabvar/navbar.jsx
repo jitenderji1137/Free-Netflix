@@ -92,7 +92,7 @@ export default function Navbar(){
              <li><Link to="/movies">Movies</Link></li>
              <li><Link to="/webseries">Web Series</Link></li>
              <li><Link to="/adult">Adult</Link></li>
-             <li><a href="https://www.instagram.com/vijayji1137/" target="_blank" rel="noreferrer">Contact</a></li>
+             <li><Link to="/videos">Videos</Link></li>
             </ul>
             <form className="search" onSubmit={HandelSubmit}>
              <input type="text" id="SearchText" placeholder="Search..."/>

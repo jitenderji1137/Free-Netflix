@@ -12,6 +12,7 @@ import { SuperSEO } from "react-super-seo";
 import { PinterestIcon,EmailIcon,WhatsappIcon,FacebookIcon,TelegramIcon,TwitterIcon} from "react-share";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import Video from "../Videos/video";
 export default function Player(){
     const { Title , Geans , Plateform , Id , page,Image } = useParams();
     const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
@@ -20,6 +21,7 @@ export default function Player(){
     const [Page,pagevalue] = useState(page);
     const shareUrl = window.location.href;
     const [user, setIsAuthenticated] = useState(true);
+    const [src,srcvalue] = useState("");
     const firebaseConfig = {
         apiKey: "AIzaSyBOwu1HGOc2LTTjalwwhwEkM16EdziUyEE",
         authDomain: "free-netflix-7e3cf.firebaseapp.com",
@@ -50,6 +52,30 @@ export default function Player(){
      .then((res)=>{
         datavalue(res.data);
      })
+     if(Plateform === "playeur"){
+        axios.get(`https://api.playeur.com/v1/videos/${Id}`)
+        .then((res)=>{
+            const URL = res.data.videos;
+            if(URL.video_1080p_url){
+                srcvalue(URL.video_1080p_url);
+            }
+            else if(URL.video_720p_url){
+                srcvalue(URL.video_720p_url);
+            }
+            else if(URL.video_480p_url){
+                srcvalue(URL.video_480p_url);
+            }
+            else if(URL.video_360p_url){
+                srcvalue(URL.video_360p_url);
+            }
+            else if(URL.video_240p_url){
+                srcvalue(URL.video_240p_url);
+            }
+            else if(URL.video_144p_url){
+                srcvalue(URL.video_144p_url);
+            }
+        })
+     }
     },[Page,Geans,Id])
     useEffect(() => {
         window.scrollTo(0,0);
@@ -210,6 +236,17 @@ export default function Player(){
         <a href={`https://filemoon.sx/download/${Id}`} target="_blank" rel="noreferrer"><Button>Download</Button></a></div>
         <div className="embed"><h3>{`< Embed Link />`}</h3><div><h4>{`https://filemoon.in/e/${Id}`}</h4><CopyToClipboard text={`https://filemoon.in/e/${Id}`} onCopy={oncopy}><FaLink style={{fontSize:"25px",borderRadius:"5px",padding:"5px",margin:"0px 0px 0px 20px",cursor:"pointer"}}/></CopyToClipboard></div></div>
         </>:""}
+        {Plateform==="playeur"?
+        <>
+         <div id="div1" style={{border: '1px solid rgb(255, 255, 254)', 
+            boxShadow: 'rgb(143, 12, 12) 0px 15px 72px 7px', 
+            overflow: 'hidden'}}>
+        <iframe allow="autoplay;fullscreen" allowFullScreen="" src={src} title={Title} style={{height: '100%', left: '0px', position: 'absolute', top: '0px', width: '100%'}}></iframe>
+        </div>
+        <h1 id="title">{Title.split("_").join(" ")}</h1>
+        <div id="downloads">
+        <a href={src} download><Button>Download</Button></a></div>
+        </>:""}
         <div className="share">
             <img src={Image.split("---").join("/")} className="oneimage" alt=""/>
             <Text style={{color:"white",fontWeight:"bolder",fontSize:"20px"}}>Share us on </Text>
@@ -239,16 +276,14 @@ export default function Player(){
         </div>
         
         <h1 id="heading">All {Geans}</h1>
-        <div className="JustforGrid">
-        {data.length===0?arr.map((I,Index)=>{
+        {Plateform !=="playeur"?<><div className="JustforGrid"> {data.length===0?arr.map((I,Index)=>{
             return <img src="https://i.postimg.cc/Cxr8bfBf/Untitled-design.png" className="images" alt="" key={Index}/>
         }):""}
         {
             data.map((Item,Index)=>{
                 return <img src={Item.Image} className="images" title={Item.Title} alt="" onClick={()=>{navigate(`/player/${Item.Title.split(" ").join("_")}/${Item.MainCategory}/${Item.Plateform}/${Item.FileID}/1/${Item.Image.split("/").join("---")}`)}} key={Index}/>
-            })
+            })}</div></>:<>{<Video/>}</>
         }
-        </div>
         <Center>
             <div className="paginationbtn">
                 <Button onClick={()=>{pagevalue(+Page<=1?1:+Page-1)}}>...Previous</Button>
