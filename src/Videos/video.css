@@ -1,0 +1,16 @@
+.mdiv{
+    margin: 100px 10px 0 10px;
+}
+.nodata{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 15px;
+}
+.imgborder{
+    border-radius: 5px;
+}
+#myTargetElement{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}

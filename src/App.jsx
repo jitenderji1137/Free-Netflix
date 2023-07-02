@@ -7,6 +7,7 @@ import Footer from "./Footer/Footer";
 import Allinone from "./Main/Allinone";
 import Player from "./Main/Player";
 import APIDocs from "./API-Docs/ApiDocs";
+import Video from "./Videos/video"
 function App() {
   const HomePage = [
     {Geans:"MainCategory=Movies&MainCategory=WebSeries&_page=1&_limit=10",Title:"Recent Uploaded ..."},
@@ -59,6 +60,7 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path="/" element={<MainBody Cate={HomePage} value={0}/>}></Route>
+      <Route path="/videos" element={<Video/>}></Route>
       <Route path="/search/:Page/:value" element={<Search/>}></Route>
       <Route path="/movies" element={<MainBody Cate={Movies} value={1}/>}></Route>
       <Route path="/webseries" element={<MainBody Cate={WebSeries} value={2}/>}></Route>
