@@ -9,10 +9,9 @@ function Video() {
     const [isLoading, setIsLoading] = useState(false);
     const [next,nextid] = useState("");
     function getdata(){
-        setIsLoading(true);
-        axios.options(`https://api.playeur.com/v1/videos?content_rating_language=al&limit=40&sort=new&time_scope=all&channel_scope=all${next}`).then((res)=>{
-        axios.get(`https://api.playeur.com/v1/videos?content_rating_language=al&limit=40&sort=new&time_scope=all&channel_scope=all${next}`)
+        axios.get(`https://api.playeur.com/v1/videos?content_rating_age=8&content_rating_language=al&content_rating_violence=mv&content_rating_content=&content_rating_nudity=&limit=30&sort=random&time_scope=all&channel_scope=all${next}`)
         .then((data)=>{
+            arrdatavalue(false);
             const dddaaatttaaa = data.data.data;
             nextid(`&cursor=${data.data.meta.next_cursor}`);
             for(let item of dddaaatttaaa){
@@ -28,17 +27,17 @@ function Video() {
                 setIsLoading(false);
             }, 1000);
         })
-    })
     }
     const handleScroll = () => {
         const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
     
-        if (scrollTop + clientHeight >= scrollHeight - 10 && !isLoading) {
-            arrdatavalue(false);
+        if (scrollTop + clientHeight >= scrollHeight - 450 && !isLoading) {
+            setIsLoading(true);
             getdata();
         }
     };
     useEffect(()=>{
+        getdata()
         window.addEventListener('scroll', handleScroll);
     },[])
     return (
