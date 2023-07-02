@@ -145,9 +145,9 @@ export default function Footer(){
             <IoIosVideocam/>
             <span>Series</span>    
             </button></Link>
-            <Link to="/adult"><button className="tab-item">
+            <Link to="/videos"><button className="tab-item">
             <RiSpyFill/>
-            <span>Adult</span>    
+            <span>Videos</span>    
             </button></Link>
             {user ?
             <div onClick={()=>{navlogout()}}><button className="tab-item">
