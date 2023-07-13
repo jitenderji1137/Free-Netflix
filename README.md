@@ -22,6 +22,10 @@ https://free-netflix-5xi.pages.dev/
 ```
 https://free-netflix-site.netlify.app/
 ```
+
+```
+https://free-netflix-web.vercel.app/
+```
 ## Preview 
 
 
