@@ -275,7 +275,7 @@ export default function Player(){
         </div>
         
         <h1 id="heading">All {Geans}</h1>
-        {Plateform !=="playeur"?<><div className="JustforGrid"> {data.length===0?arr.map((I,Index)=>{
+        {Plateform !=="Youtube"?<><div className="JustforGrid"> {data.length===0?arr.map((I,Index)=>{
             return <img src="https://i.postimg.cc/Cxr8bfBf/Untitled-design.png" className="images" alt="" key={Index}/>
         }):""}
         {

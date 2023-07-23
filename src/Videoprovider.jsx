@@ -4,39 +4,35 @@ import axios from "axios";
 import {useNavigate } from "react-router-dom";
 import { Button } from '@chakra-ui/react'
 function Videoprovider() {
-    const [arrr,arrrvalue] = useState(JSON.parse(localStorage.getItem("providedvideodata"))||[]);
+    const [arrr,arrrvalue] = useState([]);
     const [next,nextid] = useState("");
+    const [nextresulr,nextresultvalue] = useState(false)
     const navigate = useNavigate();
     function getdata(){
-        axios.get(`https://api.playeur.com/v1/videos?content_rating_age=8&content_rating_language=al&content_rating_violence=mv&content_rating_content=&content_rating_nudity=&limit=50&sort=random&time_scope=all&channel_scope=all${next}`)
+        if(nextresulr){
+            return;
+        }
+        axios.get(`https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAr99xC5BUl1tpQX9LcM6ZcmOGLzFj-WdE&part=snippet&chart=mostPopular&maxResults=50&regionCode=IN${next}`)
         .then((data)=>{
-            const dddaaatttaaa = data.data.data;
-            nextid(`&cursor=${data.data.meta.next_cursor}`);
-            let ar = [];
-            for(let item of dddaaatttaaa){
-                const img = item.cover_image_url;
-                const handle = item.handle;
-                const title = item.title;
-                if(img&&handle&&title){
-                    ar.push(item);
-                }
+            const dddaaatttaaa = data.data.items;
+            nextid(`&pageToken=${data.data.nextPageToken}`);
+            if(data.data.nextPageToken === undefined){
+                nextresultvalue(true)
             }
-            arrrvalue([...arrr,...ar]);
-            localStorage.setItem("providedvideodata", JSON.stringify(ar));
+            arrrvalue([...arrr,...dddaaatttaaa]);
         })
     }
     useEffect(()=>{
         getdata();
     },[])
-    console.log(arrr);
     return (
         <>
         <div className='mdiv'>
             <div className='nodata'>
             {arrr.map((item)=>{
-                return <div className='videodiv' key={item.handle}>
+                return <div className='videodiv' key={item.id}>
                     <div className="aspect-ratio-16x9">
-                        <img src={item.cover_image_url} className="imgborder" alt={item.title} title={item.title} onClick={() => navigate(`/player/${item.title.split(" ").join("_")}/videos/playeur/${item.handle}/1/${item.cover_image_url.split("/").join("---")}`)}/>
+                        <img src={item.snippet.thumbnails.medium.url} className="imgborder" alt={item.snippet.title} title={item.snippet.title} onClick={() => navigate(`/player/${item.snippet.title.split(" ").join("_").split("?").join("")}/Videos/Youtube/${item.id}/1/${item.snippet.thumbnails.medium.url.split("/").join("---")}`)}/>
                     </div>
                 </div>
             })}
