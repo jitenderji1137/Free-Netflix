@@ -32,7 +32,7 @@ function Videoprovider() {
             {arrr.map((item)=>{
                 return <div className='videodiv' key={item.id}>
                     <div className="aspect-ratio-16x9">
-                        <img src={item.snippet.thumbnails.medium.url} className="imgborder" alt={item.snippet.title} title={item.snippet.title} onClick={() => navigate(`/player/${item.snippet.title.split(" ").join("_").split("?").join("")}/Videos/Youtube/${item.id}/1/${item.snippet.thumbnails.medium.url.split("/").join("---")}`)}/>
+                        <img src={item.snippet.thumbnails.medium.url} className="imgborder" alt={item.snippet.title} title={item.snippet.title} onClick={() => navigate(`/player/${item.snippet.title.split(" ").join("_").split("?").join("").split("#").join("")}/Videos/Youtube/${item.id}/1/${item.snippet.thumbnails.medium.url.split("/").join("---")}`)}/>
                     </div>
                 </div>
             })}
