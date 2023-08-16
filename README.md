@@ -10,7 +10,9 @@
 Copy Free Netflix Url and open in Chrome other Browsers are not Supported 
 
 ## Copy Free-Netflix URL
-
+```
+https://free-netflix.vercel.app/
+```
 ```
 https://free-netflix.pages.dev/
 ```
