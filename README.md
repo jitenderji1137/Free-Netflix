@@ -34,6 +34,11 @@ https://free-netflix-site.netlify.app/
 ```
 https://free-netflix-web.vercel.app/
 ```
+
+
+## Screensort
+https://github.com/jitenderji1137/Free-Netflix/assets/113350806/56e6c639-1170-494a-9466-8f795516a00e
+
 ## Preview 
 
 
